@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, FlatList, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { mockRestaurants } from './mockRestaurants';
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard from './src/components/RestaurantCard/RestaurantCard';
 
 export default class App extends Component {
   renderRestaurantCards = () => {
