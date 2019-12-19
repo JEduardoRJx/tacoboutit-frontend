@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, FlatList, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { mockRestaurants } from './mockRestaurants';
 import RestaurantCard from './src/components/RestaurantCard/RestaurantCard';
+import TacoSearch from './src/components/TacoSearch/TacoSearch';
 
 export default class App extends Component {
   renderRestaurantCards = () => {
@@ -40,6 +41,7 @@ export default class App extends Component {
           colors={['#F0CB35', '#D56C2C', '#C02425']}
           style={styles.container}
       >
+        <TacoSearch />
         {this.renderRestaurantCards()}
       </LinearGradient>
     );
