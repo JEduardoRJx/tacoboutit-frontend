@@ -6,12 +6,21 @@ import * as Font from 'expo-font';
 export default class TacoSearch extends Component {
   state = {
     search: '',
+    isLoading: true,
   };
+  componentDidMount = async () => {
+    await Font.loadAsync({
+      'sign-painter': require('../../../assets/fonts/SignPainter-HouseScript.ttf')
+    })
+    this.setState({ isLoading: false });
+  }
   handleChange = (search) => {
     this.setState({ search });
   }
   render() {
     const { search } = this.state;
+    const fontFamily = this.state.isLoading ? null : { fontFamily: 'sign-painter' };
+    const dynamicInputStyles = [styles.input, fontFamily];
     return (
         <SearchBar
           placeholder="Find Tacos..."
@@ -19,7 +28,7 @@ export default class TacoSearch extends Component {
           value={search}
           lightTheme={true}
           containerStyle={styles.searchBar}
-          inputStyle={styles.input}
+          inputStyle={dynamicInputStyles}
         />
       
     )
@@ -33,6 +42,7 @@ const styles = StyleSheet.create({
   },
   input: {
     textAlign: 'center',
+    fontSize: 32,
   }
 });
 
