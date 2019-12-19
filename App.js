@@ -5,7 +5,8 @@ import {
   View,
   FlatList,
   SafeAreaView,
-  Image
+  Image,
+  Modal,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { mockRestaurants } from "./mockRestaurants";
@@ -15,40 +16,18 @@ import RestaurantCard from './src/components/RestaurantCard/RestaurantCard';
 import TacoSearch from './src/components/TacoSearch/TacoSearch';
 
 class App extends Component {
-  renderRestaurantCards = () => {
-    return mockRestaurants.map((rest, i) => {
-      return (
-        <RestaurantCard
-          name={rest.name}
-          address={rest.location.address1}
-          city={rest.location.city}
-          state={rest.location.state}
-          zipcode={rest.location.zip_code}
-          isClosed={rest.is_closed}
-          distance={rest.distance}
-          img={rest.image_url}
-          key={`${rest.name}${i}`}
-        />
-      );
-    });
+  state = {
+    showModal: false,
+    selectedRestaurant: null,
   };
-  renderCard = restaurant => {
-    console.log(restaurant);
-    return (
-      <RestaurantCard
-        name={restaurant.name}
-        address={restaurant.location.address1}
-        city={restaurant.location.city}
-        state={restaurant.location.state}
-        zipcode={restaurant.location.zip_code}
-        isClosed={restaurant.is_closed}
-        distance={restaurant.distance}
-        img={restaurant.image_url}
-        key={`${restaurant.name}${i}`}
-      />
-    );
-  };
+
+  handlePress = (id) => {
+    const selectedRestaurant = mockRestaurants.find((rest) => rest.id === id);
+    this.setState({ showModal: true, selectedRestaurant });
+  }
+ 
   render() {
+    console.log('state', this.state);
     return (
       <LinearGradient
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
@@ -56,20 +35,29 @@ class App extends Component {
       >
         <TacoSearch />
         <FlatList data={mockRestaurants} 
-        showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <RestaurantCard
-        name={item.name}
-        address={item.location.address1}
-        city={item.location.city}
-        state={item.location.state}
-        zipcode={item.location.zip_code}
-        isClosed={item.is_closed}
-        distance={item.distance}
-        img={item.image_url}
-        // key={`${item.name}${i}`}
+          showsVerticalScrollIndicator={false}
+          renderItem={({ item }) => <RestaurantCard
+          id={item.id}
+          name={item.name}
+          address={item.location.address1}
+          city={item.location.city}
+          state={item.location.state}
+          zipcode={item.location.zip_code}
+          isClosed={item.is_closed}
+          distance={item.distance}
+          img={item.image_url}
+          handlePress={this.handlePress}
+          // key={`${item.name}${i}`}
       />} />
-        {/* {this.renderRestaurantCards()} */}
-        {/* <NavBar /> */}
+        <Modal 
+          visible={this.state.showModal}
+          animationType="fade"
+          onRequestClose={() => {
+            this.setState({ showModal: false });
+          }}
+        >
+          {this.state.selectedRestaurant && <Text>{this.state.selectedRestaurant.name}</Text>}
+        </Modal>
       </LinearGradient>
     );
   }
