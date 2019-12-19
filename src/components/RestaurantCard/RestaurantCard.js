@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import { Text, View, Image, Button, StyleSheet, Dimensions } from 'react-native';
+import { Text, View, Image, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 import { Card, CardItem } from 'native-base';
 
 export default class RestaurantCard extends Component {
   render() {
-    const { name, address, city, state, zipcode, isClosed, distance, img } = this.props;
+    const { name, address, city, state, zipcode, isClosed, distance, img, handlePress } = this.props;
     const status = isClosed ? 'Closed' : 'Open';
     const color = isClosed ? 'red': 'green';
     return (
-      <Card style={styles.cardContainer}>
+      <TouchableOpacity style={styles.cardContainer} onPress={() => handlePress(this.props.id)}>
          <Image
             style={styles.img}
             source={{ uri: img }}
@@ -27,7 +27,7 @@ export default class RestaurantCard extends Component {
             <Text style={styles.text}>Tap To View</Text>
           </View>
         </View>
-      </Card>
+      </TouchableOpacity>
     )
   }
 }
