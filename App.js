@@ -55,7 +55,20 @@ class App extends Component {
         style={styles.container}
       >
         <TacoSearch />
-        {this.renderRestaurantCards()}
+        <FlatList data={mockRestaurants} 
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => <RestaurantCard
+        name={item.name}
+        address={item.location.address1}
+        city={item.location.city}
+        state={item.location.state}
+        zipcode={item.location.zip_code}
+        isClosed={item.is_closed}
+        distance={item.distance}
+        img={item.image_url}
+        // key={`${item.name}${i}`}
+      />} />
+        {/* {this.renderRestaurantCards()} */}
         {/* <NavBar /> */}
       </LinearGradient>
     );
