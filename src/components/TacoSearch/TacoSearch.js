@@ -49,14 +49,11 @@ const styles = StyleSheet.create({
   input: {
     textAlign: 'center',
     fontSize: 38,
-    width: '100%',
-    height: '100%',
     marginLeft: 0,
     marginTop: 5,
   },
   inputContainer: { 
     backgroundColor: 'white', 
-    alignItems: 'center', 
     height: '100%',
     borderRadius: 30,
   },
