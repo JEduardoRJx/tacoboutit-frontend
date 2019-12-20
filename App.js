@@ -36,7 +36,8 @@ class App extends Component {
       this.setState({ restaurants });
     } catch {
       console.log('error detected');
-      this.setState({ error: 'Failed to get tacos' });
+      const restaurants = await getRestaurants();
+      this.setState({ error: 'Failed to get tacos by location', restaurants });
     }
   }
 
@@ -44,7 +45,7 @@ class App extends Component {
     let { status } = await Permissions.askAsync(Permissions.LOCATION);
     if (status !== 'granted') {
       this.setState({
-        errorMessage: 'Permission to access location was denied',
+        error: 'Permission to access location was denied',
       });
     }
 
@@ -54,7 +55,7 @@ class App extends Component {
   };
 
   handlePress = (id) => {
-    const selectedRestaurant = mockRestaurants.find((rest) => rest.id === id);
+    const selectedRestaurant = this.state.restaurants.find((rest) => rest.id === id);
     this.setState({ showModal: true, selectedRestaurant });
   }
  
