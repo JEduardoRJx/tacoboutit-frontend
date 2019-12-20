@@ -29,20 +29,20 @@ class App extends Component {
     isLoading: true,
   };
 
-  // componentDidMount = async () => {
-  //   try {
-  //     const location = await this._getLocationAsync();
-  //     const lat = location.coords.latitude;
-  //     const lng = location.coords.longitude;
-  //     const restaurants = await getRestaurants(lat, lng);
-  //     restaurants.sort((a, b) => a.distance - b.distance)
-  //     this.setState({ restaurants, isLoading: false });
-  //   } catch {
-  //     console.log('error detected');
-  //     const restaurants = await getRestaurants();
-  //     this.setState({ error: 'Failed to get tacos by location', restaurants, isLoading: false });
-  //   }
-  // }
+  componentDidMount = async () => {
+    try {
+      const location = await this._getLocationAsync();
+      const lat = location.coords.latitude;
+      const lng = location.coords.longitude;
+      const restaurants = await getRestaurants(lat, lng);
+      restaurants.sort((a, b) => a.distance - b.distance)
+      this.setState({ restaurants, isLoading: false });
+    } catch {
+      console.log('error detected');
+      const restaurants = await getRestaurants();
+      this.setState({ error: 'Failed to get tacos by location', restaurants, isLoading: false });
+    }
+  }
 
   _getLocationAsync = async () => {
     let { status } = await Permissions.askAsync(Permissions.LOCATION);
