@@ -66,7 +66,7 @@ export const mockRestaurants = [
     tacotime_item_review_count: 2,
   },
   {    
-    id: 3,
+    id: 4,
     name: "Tacos Junior",
     phone: "9701112222",
     is_closed: false,
@@ -88,7 +88,7 @@ export const mockRestaurants = [
     tacotime_item_review_count: 2,
   },
   {    
-    id: 3,
+    id: 5,
     name: "Tacos Junior",
     phone: "9701112222",
     is_closed: false,
