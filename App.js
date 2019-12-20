@@ -33,6 +33,7 @@ class App extends Component {
       const lat = location.coords.latitude;
       const lng = location.coords.longitude;
       const restaurants = await getRestaurants(lat, lng);
+      restaurants.sort((a, b) => a.distance - b.distance)
       this.setState({ restaurants });
     } catch {
       console.log('error detected');

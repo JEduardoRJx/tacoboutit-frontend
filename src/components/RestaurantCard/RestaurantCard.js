@@ -3,9 +3,12 @@ import { Text, View, Image, Button, StyleSheet, Dimensions, TouchableOpacity } f
 import { Card, CardItem } from 'native-base';
 
 export default class RestaurantCard extends Component {
+  metersToMiles = (meters) => {
+    return (meters * 0.000621371).toFixed(2);
+  }
   render() {
     const { name, address, isClosed, img, handlePress } = this.props;
-    const distance = Number(this.props.distance).toFixed(2);
+    const distance = this.metersToMiles(this.props.distance);
     const status = isClosed ? 'Closed' : 'Open';
     const color = isClosed ? 'red': 'green';
     return (
