@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Dimensions, StyleSheet, Image } from 'react-native';
+import { Text, View, Dimensions, StyleSheet, Image, StatusBar } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import * as Font from 'expo-font';
 
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
     height: 60,
     backgroundColor: 'transparent',
     borderBottomColor: 'transparent',
-    borderTopColor: 'transparent'
+    borderTopColor: 'transparent',
+    marginTop: StatusBar.currentHeight,
   },
   input: {
     textAlign: 'center',

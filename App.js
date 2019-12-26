@@ -14,46 +14,77 @@ import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import RestaurantCard from './src/components/RestaurantCard/RestaurantCard';
 import TacoSearch from './src/components/TacoSearch/TacoSearch';
+import { getRestaurants } from './src/apiCalls';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
 
 class App extends Component {
   state = {
     showModal: false,
     selectedRestaurant: null,
+    restaurants: null,
+    error: '',
+    location: null,
+  };
+
+  componentDidMount = async () => {
+    try {
+      const location = await this._getLocationAsync();
+      const lat = location.coords.latitude;
+      const lng = location.coords.longitude;
+      const restaurants = await getRestaurants(lat, lng);
+      restaurants.sort((a, b) => a.distance - b.distance)
+      this.setState({ restaurants });
+    } catch {
+      console.log('error detected');
+      const restaurants = await getRestaurants();
+      this.setState({ error: 'Failed to get tacos by location', restaurants });
+    }
+  }
+
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status !== 'granted') {
+      this.setState({
+        error: 'Permission to access location was denied',
+      });
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    this.setState({ location });
+    return location;
   };
 
   handlePress = (id) => {
-    const selectedRestaurant = mockRestaurants.find((rest) => rest.id === id);
+    const selectedRestaurant = this.state.restaurants.find((rest) => rest.id === id);
     this.setState({ showModal: true, selectedRestaurant });
   }
  
   render() {
-    console.log('state', this.state);
     return (
       <LinearGradient
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
         style={styles.container}
       >
         <TacoSearch />
-        <FlatList data={mockRestaurants} 
+        {this.state.restaurants && <FlatList data={this.state.restaurants} 
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => <RestaurantCard
           id={item.id}
           name={item.name}
-          address={item.location.address1}
-          city={item.location.city}
-          state={item.location.state}
-          zipcode={item.location.zip_code}
+          address={item.address}
           isClosed={item.is_closed}
           distance={item.distance}
           img={item.image_url}
           handlePress={this.handlePress}
-          // key={`${item.name}${i}`}
+          // key={item => item}
       />} />
+      }
         <Modal 
           visible={this.state.showModal}
           animationType="fade"
           onRequestClose={() => {
-            this.setState({ showModal: false });
+            this.setState({ showModal: false, selectedRestaurant: null });
           }}
         >
           {this.state.selectedRestaurant && <Text>{this.state.selectedRestaurant.name}</Text>}
