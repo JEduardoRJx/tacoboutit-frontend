@@ -14,6 +14,7 @@ import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import RestaurantCard from './src/components/RestaurantCard/RestaurantCard';
 import TacoSearch from './src/components/TacoSearch/TacoSearch';
+import SplashPage from './src/components/SplashPage/SplashPage';
 import { getRestaurants } from './src/apiCalls';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
@@ -25,6 +26,7 @@ class App extends Component {
     restaurants: null,
     error: '',
     location: null,
+    isLoading: true,
   };
 
   componentDidMount = async () => {
@@ -34,11 +36,11 @@ class App extends Component {
       const lng = location.coords.longitude;
       const restaurants = await getRestaurants(lat, lng);
       restaurants.sort((a, b) => a.distance - b.distance)
-      this.setState({ restaurants });
+      this.setState({ restaurants, isLoading: false });
     } catch {
       console.log('error detected');
       const restaurants = await getRestaurants();
-      this.setState({ error: 'Failed to get tacos by location', restaurants });
+      this.setState({ error: 'Failed to get tacos by location', restaurants, isLoading: false });
     }
   }
 
@@ -89,6 +91,7 @@ class App extends Component {
         >
           {this.state.selectedRestaurant && <Text>{this.state.selectedRestaurant.name}</Text>}
         </Modal>
+        {this.state.isLoading && <SplashPage isLoading={this.state.isLoading}/> }
       </LinearGradient>
     );
   }
