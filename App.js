@@ -18,6 +18,7 @@ import SplashPage from './src/components/SplashPage/SplashPage';
 import { getRestaurants } from './src/apiCalls';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+import RestaurantPage from'./src/components/RestaurantPage/RestaurantPage'
 
 class App extends Component {
   state = {
@@ -89,7 +90,7 @@ class App extends Component {
             this.setState({ showModal: false, selectedRestaurant: null });
           }}
         >
-          {this.state.selectedRestaurant && <Text>{this.state.selectedRestaurant.name}</Text>}
+          <RestaurantPage restaurant={this.state.selectedRestaurant} />
         </Modal>
         {this.state.isLoading && <SplashPage isLoading={this.state.isLoading}/> }
       </LinearGradient>
