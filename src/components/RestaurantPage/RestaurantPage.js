@@ -2,16 +2,20 @@ import React, { Component } from 'react'
 import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import TacoCard from '../TacoCard/TacoCard';
+import AddTacoButton from '../AddTacoButton/AddTacoButton';
+import { newTaco } from '../../apiCalls';
 const callIcon = require('../../../assets/call-answer.png');
 
-export default class RestaurantPage extends Component {
+
+export default class RestaurantPage extends Component { 
   renderTacos = () => {
     const { tacos } = this.props.restaurant;
     return tacos.map((taco, i) => <TacoCard key={`${taco.type}-${i}`} type={taco.type} />);
   }
 
   render() {
-    const { restaurant } = this.props;
+    const { restaurant, submitTaco } = this.props;
+    const id = restaurant.id;
     const tacos = restaurant.tacos;
     const status = restaurant.isClosed ? 'Closed' : 'Open';
     const color = restaurant.isClosed ? 'red': 'green';
@@ -21,7 +25,8 @@ export default class RestaurantPage extends Component {
         style={styles.container}>
         <View style={styles.statusBubble}>
             <Text style={{ color, textAlign: 'center', fontSize: 20, fontWeight: 'bold' }}>{status}</Text>
-          </View>
+        </View>
+        <AddTacoButton submitTaco={submitTaco} id={id}/>
         <Image
             style={styles.img}
             source={{ uri: restaurant.image_url }}/>

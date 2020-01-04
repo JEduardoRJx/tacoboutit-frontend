@@ -15,7 +15,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import RestaurantCard from './src/components/RestaurantCard/RestaurantCard';
 import TacoSearch from './src/components/TacoSearch/TacoSearch';
 import SplashPage from './src/components/SplashPage/SplashPage';
-import { getRestaurants } from './src/apiCalls';
+import { getRestaurants, newTaco } from './src/apiCalls';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import RestaurantPage from'./src/components/RestaurantPage/RestaurantPage'
@@ -38,6 +38,7 @@ class App extends Component {
       const restaurants = await getRestaurants(lat, lng);
       restaurants.sort((a, b) => a.distance - b.distance)
       this.setState({ restaurants, isLoading: false });
+      
     } catch {
       console.log('error detected');
       const restaurants = await getRestaurants();
@@ -61,6 +62,22 @@ class App extends Component {
   handlePress = (id) => {
     const selectedRestaurant = this.state.restaurants.find((rest) => rest.id === id);
     this.setState({ showModal: true, selectedRestaurant });
+  }
+
+  submitNewTaco = async (type, restaurantId) => {
+    const response = await newTaco(type, restaurantId);
+    if(!response.error) {
+      const newTaco = { type, restaurant: restaurantId };
+      this.updateLocalTacos(newTaco);
+    }
+    return response;
+  }
+
+  updateLocalTacos = (newTaco) => {
+    const localRestaurants = this.state.restaurants.map((rest) => rest);
+    const restToUpdate = localRestaurants.find((rest) => rest.id === newTaco.restaurant);
+    restToUpdate.tacos = [...restToUpdate.tacos, newTaco];
+    this.setState({ restaurants: localRestaurants });
   }
  
   render() {
@@ -90,13 +107,14 @@ class App extends Component {
             this.setState({ showModal: false, selectedRestaurant: null });
           }}
         >
-          <RestaurantPage restaurant={this.state.selectedRestaurant} />
+          <RestaurantPage restaurant={this.state.selectedRestaurant} submitTaco={this.submitNewTaco}/>
         </Modal>
         {this.state.isLoading && <SplashPage isLoading={this.state.isLoading}/> }
       </LinearGradient>
     );
   }
 }
+
 
 class Tacos extends Component {
   render() {
