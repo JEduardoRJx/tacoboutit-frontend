@@ -24,7 +24,7 @@ export default class AddTacoButton extends Component {
           animationType="slide"
           onRequestClose={() => this.setState({ showAddTaco: false })}
         >
-          <Text>Welcome to this awesome modal!</Text>
+          <Text>Add New Taco</Text>
           <Text>Select Type</Text>
           <Picker
             selectedValue={this.state.selectedType}
