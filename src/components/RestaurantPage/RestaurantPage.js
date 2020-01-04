@@ -26,7 +26,7 @@ export default class RestaurantPage extends Component {
         <View style={styles.statusBubble}>
             <Text style={{ color, textAlign: 'center', fontSize: 20, fontWeight: 'bold' }}>{status}</Text>
         </View>
-        <AddTacoButton submitTaco={submitTaco} id={id}/>
+        <AddTacoButton style={styles.addTacoButton} submitTaco={submitTaco} id={id}/>
         <Image
             style={styles.img}
             source={{ uri: restaurant.image_url }}/>
@@ -93,5 +93,5 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     alignSelf: 'center',
     marginVertical: 5,
-  },
+  }
 })
