@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TacoSearch renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "borderBottomColor": "transparent",
+      "borderBottomWidth": 1,
+      "borderTopColor": "transparent",
+      "borderTopWidth": 1,
+      "height": 60,
+      "marginTop": 42,
+      "padding": 0,
+      "width": 675,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "paddingHorizontal": 0,
+        "width": "100%",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "white",
+          "borderBottomWidth": 0,
+          "borderColor": "#86939e",
+          "borderRadius": 30,
+          "flexDirection": "row",
+          "height": "100%",
+          "minHeight": 30,
+          "overflow": "hidden",
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+          ],
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 40,
+            "justifyContent": "center",
+            "marginLeft": 10,
+          }
+        }
+      >
+        <Image
+          source={1}
+          style={
+            Object {
+              "height": 45,
+              "width": 45,
+            }
+          }
+        />
+      </View>
+      <TextInput
+        allowFontScaling={true}
+        editable={true}
+        onBlur={[Function]}
+        onChangeText={[Function]}
+        onFocus={[Function]}
+        placeholder="Find Tacos..."
+        placeholderTextColor="black"
+        platform="default"
+        rejectResponderTermination={true}
+        style={
+          Object {
+            "alignSelf": "center",
+            "color": "#86939e",
+            "flex": 1,
+            "fontSize": 38,
+            "marginLeft": 0,
+            "marginTop": 5,
+            "minHeight": 40,
+            "textAlign": "center",
+          }
+        }
+        testID="searchInput"
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "height": 40,
+            "justifyContent": "center",
+            "marginLeft": 15,
+            "marginRight": 8,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "row",
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;

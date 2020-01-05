@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddTacoButton renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={true}
+  isTVSelectable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "lightgray",
+      "borderRadius": 20,
+      "height": 40,
+      "justifyContent": "center",
+      "opacity": 1,
+      "position": "absolute",
+      "right": 10,
+      "top": 220,
+      "width": 100,
+      "zIndex": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      }
+    }
+  >
+    + Taco
+  </Text>
+  <Modal
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#DCDCDC",
+          "borderRadius": 20,
+          "height": 667,
+          "justifyContent": "space-around",
+          "left": 75,
+          "overflow": "hidden",
+          "padding": 20,
+          "position": "absolute",
+          "top": 333.5,
+          "width": 600,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+          }
+        }
+      >
+        Add New Taco
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+          }
+        }
+      >
+        Select Type
+      </Text>
+      <View
+        style={
+          Object {
+            "height": 50,
+            "width": "100%",
+          }
+        }
+      >
+        <RCTPicker
+          items={
+            Array [
+              Object {
+                "label": "Carne Asada",
+                "textColor": undefined,
+                "value": "carne asada",
+              },
+              Object {
+                "label": "Al Pastor",
+                "textColor": undefined,
+                "value": "al pastor",
+              },
+              Object {
+                "label": "Cabeza",
+                "textColor": undefined,
+                "value": "cabeza",
+              },
+              Object {
+                "label": "Cabeza",
+                "textColor": undefined,
+                "value": "cabeza",
+              },
+              Object {
+                "label": "Carnitas",
+                "textColor": undefined,
+                "value": "carnitas",
+              },
+            ]
+          }
+          onChange={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          selectedIndex={0}
+          style={
+            Array [
+              Object {
+                "height": 216,
+              },
+              undefined,
+            ]
+          }
+        />
+      </View>
+      <View
+        accessible={true}
+        focusable={true}
+        isTVSelectable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "opacity": 1,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#00BFFF",
+              "borderRadius": 30,
+              "height": 50,
+              "justifyContent": "center",
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 16,
+              }
+            }
+          >
+            Submit
+          </Text>
+        </View>
+      </View>
+    </View>
+  </Modal>
+</View>
+`;

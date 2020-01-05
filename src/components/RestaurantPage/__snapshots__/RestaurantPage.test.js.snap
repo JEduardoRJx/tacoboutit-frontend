@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RestaurantPage renders correctly 1`] = `
+<ViewManagerAdapter_ExpoLinearGradient
+  proxiedProperties={
+    Object {
+      "colors": Array [
+        4293970741,
+        4292176940,
+        4290782245,
+      ],
+      "endPoint": undefined,
+      "locations": undefined,
+      "startPoint": undefined,
+    }
+  }
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "borderRadius": 20,
+        "height": 40,
+        "justifyContent": "center",
+        "position": "absolute",
+        "right": 10,
+        "top": 10,
+        "width": 100,
+        "zIndex": 5,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "green",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      Open
+    </Text>
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "lightgray",
+        "borderRadius": 20,
+        "height": 40,
+        "justifyContent": "center",
+        "opacity": 1,
+        "position": "absolute",
+        "right": 10,
+        "top": 220,
+        "width": 100,
+        "zIndex": 5,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      + Taco
+    </Text>
+    <Modal
+      animationType="slide"
+      hardwareAccelerated={false}
+      onRequestClose={[Function]}
+      transparent={true}
+      visible={false}
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#DCDCDC",
+            "borderRadius": 20,
+            "height": 667,
+            "justifyContent": "space-around",
+            "left": 75,
+            "overflow": "hidden",
+            "padding": 20,
+            "position": "absolute",
+            "top": 333.5,
+            "width": 600,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+            }
+          }
+        >
+          Add New Taco
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 24,
+            }
+          }
+        >
+          Select Type
+        </Text>
+        <View
+          style={
+            Object {
+              "height": 50,
+              "width": "100%",
+            }
+          }
+        >
+          <RCTPicker
+            items={
+              Array [
+                Object {
+                  "label": "Carne Asada",
+                  "textColor": undefined,
+                  "value": "carne asada",
+                },
+                Object {
+                  "label": "Al Pastor",
+                  "textColor": undefined,
+                  "value": "al pastor",
+                },
+                Object {
+                  "label": "Cabeza",
+                  "textColor": undefined,
+                  "value": "cabeza",
+                },
+                Object {
+                  "label": "Cabeza",
+                  "textColor": undefined,
+                  "value": "cabeza",
+                },
+                Object {
+                  "label": "Carnitas",
+                  "textColor": undefined,
+                  "value": "carnitas",
+                },
+              ]
+            }
+            onChange={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            selectedIndex={0}
+            style={
+              Array [
+                Object {
+                  "height": 216,
+                },
+                undefined,
+              ]
+            }
+          />
+        </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#00BFFF",
+                "borderRadius": 30,
+                "height": 50,
+                "justifyContent": "center",
+                "width": 200,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "color": "white",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Submit
+            </Text>
+          </View>
+        </View>
+      </View>
+    </Modal>
+  </View>
+  <Image
+    source={
+      Object {
+        "uri": "https://s3-media2.fl.yelpcdn.com/bphoto/tNN5NvMch7rJMm-YyTLTxA/o.jpg",
+      }
+    }
+    style={
+      Object {
+        "height": 533.6,
+        "width": 750,
+      }
+    }
+  />
+  <RCTScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "flex": 2,
+            "padding": 10,
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 36,
+              "fontWeight": "bold",
+              "textAlign": "left",
+            }
+          }
+        >
+          Guadalajara Mexican Restaurant
+        </Text>
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 22,
+            }
+          }
+        >
+          2835 W 72nd Ave, Westminster, CO 80030
+        </Text>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "alignSelf": "center",
+              "backgroundColor": "white",
+              "borderRadius": 25,
+              "height": 60,
+              "justifyContent": "center",
+              "marginVertical": 5,
+              "opacity": 1,
+              "width": 600,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 40,
+                "width": 40,
+              }
+            }
+          />
+        </View>
+        <View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "backgroundColor": "white",
+                "borderRadius": 10,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "padding": 10,
+                "width": 562.5,
+              }
+            }
+          >
+            <Text>
+              al pastor
+            </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "backgroundColor": "white",
+                "borderRadius": 10,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "padding": 10,
+                "width": 562.5,
+              }
+            }
+          >
+            <Text>
+              carne asada
+            </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "backgroundColor": "white",
+                "borderRadius": 10,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "padding": 10,
+                "width": 562.5,
+              }
+            }
+          >
+            <Text>
+              cabeza
+            </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "backgroundColor": "white",
+                "borderRadius": 10,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "padding": 10,
+                "width": 562.5,
+              }
+            }
+          >
+            <Text>
+              testing
+            </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "alignSelf": "center",
+                "backgroundColor": "white",
+                "borderRadius": 10,
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+                "marginVertical": 10,
+                "padding": 10,
+                "width": 562.5,
+              }
+            }
+          >
+            <Text>
+              carnitas
+            </Text>
+            <Image
+              source={1}
+              style={
+                Object {
+                  "height": 30,
+                  "width": 30,
+                }
+              }
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</ViewManagerAdapter_ExpoLinearGradient>
+`;

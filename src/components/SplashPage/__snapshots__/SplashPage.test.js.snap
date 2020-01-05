@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SplashPage renders correctly 1`] = `
+<ViewManagerAdapter_ExpoLinearGradient
+  proxiedProperties={
+    Object {
+      "colors": Array [
+        4293970741,
+        4292176940,
+        4290782245,
+      ],
+      "endPoint": undefined,
+      "locations": undefined,
+      "startPoint": undefined,
+    }
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "height": 1334,
+      "justifyContent": "space-around",
+      "position": "absolute",
+      "width": 750,
+      "zIndex": 5,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 100,
+          },
+          null,
+        ]
+      }
+    >
+      Taco
+    </Text>
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontSize": 100,
+          },
+          null,
+        ]
+      }
+    >
+      BoutIt
+    </Text>
+  </View>
+  <ActivityIndicator
+    animating={true}
+    color="#fff"
+    hidesWhenStopped={true}
+    size="large"
+  />
+</ViewManagerAdapter_ExpoLinearGradient>
+`;
