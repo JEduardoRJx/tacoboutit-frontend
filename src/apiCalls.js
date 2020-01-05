@@ -16,6 +16,5 @@ export const newTaco = async (type, restaurant) => {
     return Error('Failed to add taco.');
   }
   const resp = await response.json();
-  console.log(resp, '---response');
   return resp;
 }
