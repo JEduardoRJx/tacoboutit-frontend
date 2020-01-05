@@ -1,5 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`AddTacoButton enzyme snapshot test 1`] = `
+<TouchableOpacity
+  activeOpacity={0.2}
+  onPress={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "lightgray",
+      "borderRadius": 20,
+      "height": 40,
+      "justifyContent": "center",
+      "position": "absolute",
+      "right": 10,
+      "top": 220,
+      "width": 100,
+      "zIndex": 5,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "fontWeight": "bold",
+        "textAlign": "center",
+      }
+    }
+  >
+    + Taco
+  </Text>
+  <Component
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={true}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#DCDCDC",
+          "borderRadius": 20,
+          "height": 667,
+          "justifyContent": "space-around",
+          "left": 75,
+          "overflow": "hidden",
+          "padding": 20,
+          "position": "absolute",
+          "top": 333.5,
+          "width": 600,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+          }
+        }
+      >
+        Add New Taco
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 24,
+          }
+        }
+      >
+        Select Type
+      </Text>
+      <Picker
+        mode="dialog"
+        onValueChange={[Function]}
+        selectedValue="carne asada"
+        style={
+          Object {
+            "height": 50,
+            "width": "100%",
+          }
+        }
+      >
+        <PickerItem
+          label="Carne Asada"
+          value="carne asada"
+        />
+        <PickerItem
+          label="Al Pastor"
+          value="al pastor"
+        />
+        <PickerItem
+          label="Cabeza"
+          value="cabeza"
+        />
+        <PickerItem
+          label="Cabeza"
+          value="cabeza"
+        />
+        <PickerItem
+          label="Carnitas"
+          value="carnitas"
+        />
+      </Picker>
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#00BFFF",
+              "borderRadius": 30,
+              "height": 50,
+              "justifyContent": "center",
+              "width": 200,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontSize": 16,
+              }
+            }
+          >
+            Submit
+          </Text>
+        </View>
+      </TouchableOpacity>
+    </View>
+  </Component>
+</TouchableOpacity>
+`;
+
 exports[`AddTacoButton renders correctly 1`] = `
 <View
   accessible={true}

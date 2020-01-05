@@ -12,7 +12,7 @@ describe('AddTacoButton', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('matches snapshot with enzyme', async () => {
+  it('handleSubmit resets state and calls submitTaco with correct params', async () => {
     const wrapper = shallow(<AddTacoButton submitTaco={mockSubmitTaco} id={1}/>);
     wrapper.setState({ showAddTaco: true, selectedType: 'test' })
     expect(wrapper.state('showAddTaco')).toEqual(true);
