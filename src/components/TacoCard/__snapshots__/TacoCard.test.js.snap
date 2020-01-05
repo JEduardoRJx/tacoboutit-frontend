@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TacoCard renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": "white",
+      "borderRadius": 10,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginVertical": 10,
+      "padding": 10,
+      "width": 562.5,
+    }
+  }
+>
+  <Text>
+    Carne Asada
+  </Text>
+  <Image
+    source={1}
+    style={
+      Object {
+        "height": 30,
+        "width": 30,
+      }
+    }
+  />
+</View>
+`;
