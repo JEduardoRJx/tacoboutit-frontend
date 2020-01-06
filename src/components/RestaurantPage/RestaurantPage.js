@@ -1,16 +1,29 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView } from 'react-native';
+import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import TacoCard from '../TacoCard/TacoCard';
 import AddTacoButton from '../AddTacoButton/AddTacoButton';
 import { newTaco } from '../../apiCalls';
+import ReviewsPage from '../ReviewsPage/ReviewsPage'
 const callIcon = require('../../../assets/call-answer.png');
 
 
 export default class RestaurantPage extends Component { 
+  state = {
+    showReviews: false,
+  }
+
   renderTacos = () => {
     const { tacos } = this.props.restaurant;
     return tacos.map((taco, i) => <TacoCard key={`${taco.type}-${i}`} type={taco.type} />);
+  }
+
+  renderReviews = () => {
+    return (
+      <Modal visible={true}>
+        <ReviewsPage />
+      </Modal>
+    )
   }
 
   render() {
@@ -44,6 +57,13 @@ export default class RestaurantPage extends Component {
               />
             </TouchableOpacity>
             {tacos.length !== 0 && <View>{this.renderTacos()}</View>}
+            <TouchableOpacity onPress={() => this.setState({showReviews: true})}>
+                <Modal visible={this.state.showReviews}
+                  onRequestClose={() => this.setState({showReviews: false})}>
+                  <ReviewsPage />
+                </Modal>
+                <Text>View All Reviews</Text>
+              </TouchableOpacity>
           </View>
         </ScrollView>
       </LinearGradient>
