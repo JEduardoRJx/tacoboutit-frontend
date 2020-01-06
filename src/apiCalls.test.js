@@ -11,7 +11,7 @@ describe('getRestaurants', () => {
     });
   })
   it('should be called with the correct url', () => {
-    const expected = 'https://tacoboutit-test.herokuapp.com/api/v1/restaurants/?lat=39.7392?lng=-104.9903';
+    const expected = 'https://tacoboutit-test.herokuapp.com/api/v1/restaurants/retrieve/?lat=39.7392&lng=-104.9903';
     getRestaurants();
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
