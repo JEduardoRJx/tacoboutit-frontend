@@ -1,104 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App renders correctly 1`] = `
-<ContextProvider
-  value="light"
->
-  <ContextProvider
-    value={
-      Object {
-        "_childrenNavigation": Object {},
-        "actions": Object {},
-        "addListener": [Function],
-        "dangerouslyGetParent": [Function],
-        "dispatch": [Function],
-        "getChildNavigation": [Function],
-        "getScreenProps": [Function],
-        "goBack": [Function],
-        "isFirstRouteInParent": [Function],
-        "isFocused": [Function],
-        "navigate": [Function],
-        "router": Object {
-          "childRouters": Object {
-            "Home": null,
-            "Tacos": null,
-          },
-          "getActionCreators": [Function],
-          "getActionForPathAndParams": [Function],
-          "getComponentForRouteName": [Function],
-          "getComponentForState": [Function],
-          "getPathAndParamsForState": [Function],
-          "getScreenOptions": [Function],
-          "getStateForAction": [Function],
-        },
-        "setParams": [Function],
-        "state": Object {
-          "index": 0,
-          "isTransitioning": false,
-          "routes": Array [
-            Object {
-              "key": "Home",
-              "params": undefined,
-              "routeName": "Home",
-            },
-            Object {
-              "key": "Tacos",
-              "params": undefined,
-              "routeName": "Tacos",
-            },
-          ],
-        },
-      }
+<LinearGradient
+  colors={
+    Array [
+      "#F0CB35",
+      "#D56C2C",
+      "#C02425",
+    ]
+  }
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#ccc",
+      "flex": 1,
+      "justifyContent": "center",
     }
+  }
+>
+  <TacoSearch />
+  <Component
+    animationType="fade"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    visible={false}
   >
-    <Navigator
-      navigation={
-        Object {
-          "_childrenNavigation": Object {},
-          "actions": Object {},
-          "addListener": [Function],
-          "dangerouslyGetParent": [Function],
-          "dispatch": [Function],
-          "getChildNavigation": [Function],
-          "getScreenProps": [Function],
-          "goBack": [Function],
-          "isFirstRouteInParent": [Function],
-          "isFocused": [Function],
-          "navigate": [Function],
-          "router": Object {
-            "childRouters": Object {
-              "Home": null,
-              "Tacos": null,
-            },
-            "getActionCreators": [Function],
-            "getActionForPathAndParams": [Function],
-            "getComponentForRouteName": [Function],
-            "getComponentForState": [Function],
-            "getPathAndParamsForState": [Function],
-            "getScreenOptions": [Function],
-            "getStateForAction": [Function],
-          },
-          "setParams": [Function],
-          "state": Object {
-            "index": 0,
-            "isTransitioning": false,
-            "routes": Array [
-              Object {
-                "key": "Home",
-                "params": undefined,
-                "routeName": "Home",
-              },
-              Object {
-                "key": "Tacos",
-                "params": undefined,
-                "routeName": "Tacos",
-              },
-            ],
-          },
-        }
-      }
-      theme="light"
+    <RestaurantPage
+      restaurant={null}
+      submitTaco={[Function]}
     />
-  </ContextProvider>
-</ContextProvider>
+  </Component>
+  <SplashPage
+    isLoading={true}
+  />
+</LinearGradient>
 `;

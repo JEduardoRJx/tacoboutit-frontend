@@ -1,55 +1,58 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
+import * as Permissions from 'expo-permissions';
+import * as Location from 'expo-location';
 
-import App from './App';
+import { App } from './App';
 
 describe('App', () => {
-  const mockRestaurant = {
+  let wrapper;
+  const mockNewTaco = jest.fn();
+  const mockStateRestaurants = [{
     address: "2835 W 72nd Ave, Westminster, CO 80030",
-    distance: 3.52669047076749,
-    id: 1,
-    image_url: "https://s3-media2.fl.yelpcdn.com/bphoto/tNN5NvMch7rJMm-YyTLTxA/o.jpg",
-    is_closed: false,
-    latitude: 39.82754,
-    longitude: -105.02161,
     name: "Guadalajara Mexican Restaurant",
-    phone: "+13034269540",
-    review_count: 471,
-    tacoboutit_item_review_count: 0,
-    tacos: [{
-        id: 1,
-        restaurant: 1,
-        type: "al pastor",
-      },
-       {
-        id: 2,
-        restaurant: 1,
-        type: "carne asada",
-      },
-      {
-        id: 3,
-        restaurant: 1,
-        type: "cabeza",
-      },
-       {
-        id: 8,
-        restaurant: 1,
-        type: "testing",
-      },
-      {
-        id: 13,
-        restaurant: 1,
-        type: "carnitas",
-      },
-    ],
-    url: "https://www.yelp.com/biz/guadalajara-mexican-restaurant-westminster?adjust_creative=pxQ3XEqH9sM15FQYWsuBXQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=pxQ3XEqH9sM15FQYWsuBXQ",
-    yelp_id: "3LoMv9TtprQhH1AmN33ubA",
-    yelp_rating: 4.5,
-  }
+    id: 1,
+  }, {
+    address: "1111 W Taco St, CO 80211",
+    name: "Taco Taco Taco",
+    id: 2,
+  }];
+
+  beforeEach(() => {
+     wrapper = shallow(<App />);
+  })
 
   it('renders correctly', () => {
-    const wrapper = shallow(<App />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it.skip('should return a permission error message', async () => {
+    let mockGetLocation = jest.fn().mockImplementation(() => {
+      return Permissions.askAsync = jest.fn().mockResolvedValue({
+        status: 'denied',
+      });
+    })
+    const status = wrapper.mockGetLocation();
+    // await wrapper.instance()._getLocationAsync()
+    expect(wrapper.state('error')).toBe('Permission to access location was denied');
+  });
+
+  it('should be able to handlePress', async () => {
+    wrapper.setState({ restaurants: mockStateRestaurants});
+    expect(wrapper.state('restaurants').length).toBe(2);
+    await wrapper.instance().handlePress(1);
+    expect(wrapper.state('selectedRestaurant')).toEqual({
+      address: "2835 W 72nd Ave, Westminster, CO 80030",
+      name: "Guadalajara Mexican Restaurant",
+      id: 1,
+    })
+  })
+
+  it.skip('should be able to handle submitNewTaco', async () => {
+    // wrapper.setState({ restaurants: mockStateRestaurants});
+    wrapper = shallow(<App newTaco={mockNewTaco} />);
+    await wrapper.instance().submitNewTaco('carne', 1)
+    expect(mockNewTaco).toHaveBeenCalledWith('carne', 1);
+  })
 });

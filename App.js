@@ -20,7 +20,7 @@ import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
 import RestaurantPage from'./src/components/RestaurantPage/RestaurantPage'
 
-class App extends Component {
+export class App extends Component {
   state = {
     showModal: false,
     selectedRestaurant: null,
