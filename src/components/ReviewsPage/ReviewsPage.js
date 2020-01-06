@@ -1,10 +1,23 @@
 import React, { Component } from 'react'
 import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal } from 'react-native';
-
-export default class ReviewsPages extends Component { 
+import ReviewCard from '../ReviewCard/ReviewCard';
+export default class ReviewsPages extends Component {
+  renderReviewCards = () => {
+    const { tacos } = this.props;
+    return tacos.map((taco) => {
+      return <ReviewCard taco={taco} key={taco.id}/>;
+    });
+  }
+  
   render() {
+    const { tacos } = this.props;
+    console.log(tacos);
     return (
-      <Text>AY!</Text>
+      <ScrollView>
+      <View>
+        {this.renderReviewCards()}
+      </View>
+      </ScrollView>
     )
   }
 }
