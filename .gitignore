@@ -10,6 +10,7 @@ npm-debug.*
 web-build/
 web-report/
 .eslintrc.js
+coverage/*
 
 # macOS
 .DS_Store

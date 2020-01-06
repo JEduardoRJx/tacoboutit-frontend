@@ -29,7 +29,7 @@ exports[`RestaurantCard renders correctly 1`] = `
   <Image
     source={
       Object {
-        "uri": undefined,
+        "uri": "https://some-url-for-the-image/asld.jpg",
       }
     }
     style={
@@ -58,7 +58,9 @@ exports[`RestaurantCard renders correctly 1`] = `
           "width": "100%",
         }
       }
-    />
+    >
+      Taco Spot
+    </Text>
     <View
       style={
         Object {
@@ -75,7 +77,9 @@ exports[`RestaurantCard renders correctly 1`] = `
             "fontSize": 16,
           }
         }
-      />
+      >
+        123 drive
+      </Text>
     </View>
     <View
       style={
@@ -119,7 +123,7 @@ exports[`RestaurantCard renders correctly 1`] = `
           }
         }
       >
-        NaN
+        0.77
          miles
       </Text>
       <Text
