@@ -84,6 +84,5 @@ describe('ReviewCard', () => {
   it('if there is no average rating or reviews alternate text should be displayed', () => {
     const wrapperMissingInfo = shallow(<ReviewCard taco={mockTacoNoRatingsReviews} />);
     expect(wrapperMissingInfo).toMatchSnapshot();
-    console.log(wrapperMissingInfo.debug());
   });
 });
