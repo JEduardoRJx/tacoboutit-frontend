@@ -19,7 +19,7 @@ export const newTaco = async (type, restaurant) => {
   return resp;
 }
 
-export const addReview = async (tacoId, rating, review) => {
+export const addReview = async (tacoId, rating, review = 'No Review Available') => {
   const response = await fetch(`https://tacoboutit-test.herokuapp.com/api/v1/reviews/`, {
     method: 'POST', 
     headers: { 'content-type': 'application/json' },
