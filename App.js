@@ -78,6 +78,16 @@ export class App extends Component {
     restToUpdate.tacos = [...restToUpdate.tacos, newTaco];
     this.setState({ restaurants: localRestaurants });
   }
+
+  updateLocalReviews = (response) => {
+    const newSelectedRestaurant = this.state.selectedRestaurant;
+    const selectedTaco = newSelectedRestaurant.tacos.find(taco => taco.id === response.taco);
+    selectedTaco.reviews.push(response)
+    const restaurants = this.state.restaurants.map(rest => rest)
+    let restaurantToUpdate = restaurants.find(rest => rest.id === newSelectedRestaurant.id);
+    restaurantToUpdate = newSelectedRestaurant;
+    this.setState({restaurants: restaurants})
+  }
  
   render() {
     return (
@@ -106,7 +116,7 @@ export class App extends Component {
             this.setState({ showModal: false, selectedRestaurant: null });
           }}
         >
-          <RestaurantPage restaurant={this.state.selectedRestaurant} submitTaco={this.submitNewTaco}/>
+          <RestaurantPage restaurant={this.state.selectedRestaurant} submitTaco={this.submitNewTaco} updateLocalReviews={this.updateLocalReviews}/>
         </Modal>
         {this.state.isLoading && <SplashPage isLoading={this.state.isLoading}/> }
       </LinearGradient>
