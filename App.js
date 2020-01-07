@@ -95,7 +95,7 @@ export class App extends Component {
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
         style={styles.container}
       >
-        <TacoSearch />
+        {/* <TacoSearch /> */}
         {this.state.restaurants && <FlatList data={this.state.restaurants} 
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => <RestaurantCard
@@ -125,48 +125,48 @@ export class App extends Component {
 }
 
 
-class Tacos extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Taco Screen</Text>
-      </View>
-    );
-  }
-}
+// class Tacos extends Component {
+//   render() {
+//     return (
+//       <View style={styles.container}>
+//         <Text>Taco Screen</Text>
+//       </View>
+//     );
+//   }
+// }
 
-const TabNavigator = createBottomTabNavigator(
-  {
-    Home: {
-      screen: App,
-      navigationOptions: {
-        tabBarIcon: () => (
-          <Image
-            source={require("./assets/home.png")}
-            style={{ width: 40, height: 40 }}
-          />
-        )
-      }
-    },
-    Tacos: {
-      screen: Tacos,
-      navigationOptions: {
-        tabBarIcon: () => (
-          <Image
-            source={require("./assets/taco.png")}
-            style={{ width: 40, height: 40 }}
-          />
-        )
-      }
-    }
-  },
-  {
-    tabBarOptions: {
-      showLabel: false,
-      activeBackgroundColor: "rgba(0, 0, 0, .1)"
-    }
-  }
-);
+// const TabNavigator = createBottomTabNavigator(
+//   {
+//     Home: {
+//       screen: App,
+//       navigationOptions: {
+//         tabBarIcon: () => (
+//           <Image
+//             source={require("./assets/home.png")}
+//             style={{ width: 40, height: 40 }}
+//           />
+//         )
+//       }
+//     },
+//     Tacos: {
+//       screen: Tacos,
+//       navigationOptions: {
+//         tabBarIcon: () => (
+//           <Image
+//             source={require("./assets/taco.png")}
+//             style={{ width: 40, height: 40 }}
+//           />
+//         )
+//       }
+//     }
+//   },
+//   {
+//     tabBarOptions: {
+//       showLabel: false,
+//       activeBackgroundColor: "rgba(0, 0, 0, .1)"
+//     }
+//   }
+// );
 
 const styles = StyleSheet.create({
   container: {
@@ -177,4 +177,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default createAppContainer(TabNavigator);
+// export default createAppContainer(TabNavigator);
+export default App;

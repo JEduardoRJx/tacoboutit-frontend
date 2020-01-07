@@ -49,7 +49,7 @@ export default class AddReviewForm extends Component {
         this.setState({error: 'Failed to post review'})
       }
     } else {
-      const response = await addReview(tacoId, rating, review)
+      response = await addReview(tacoId, rating, review)
       if(!response.ok) {
         this.setState({error: 'Failed to post review'})
       }
