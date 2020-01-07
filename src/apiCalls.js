@@ -18,3 +18,15 @@ export const newTaco = async (type, restaurant) => {
   const resp = await response.json();
   return resp;
 }
+
+export const addReview = async (tacoId, rating, review) => {
+  const response = await fetch(`https://tacoboutit-test.herokuapp.com/api/v1/reviews/`, {
+    method: 'POST', 
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({
+      taco: tacoId,
+      rating,
+      review,
+    }),
+  })
+}

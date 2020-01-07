@@ -18,14 +18,6 @@ export default class RestaurantPage extends Component {
     return tacos.map((taco, i) => <TacoCard key={`${taco.type}-${i}`} type={taco.type} />);
   }
 
-  renderReviews = () => {
-    return (
-      <Modal visible={true}>
-        <ReviewsPage />
-      </Modal>
-    )
-  }
-
   render() {
     const { restaurant, submitTaco } = this.props;
     const id = restaurant.id;
@@ -60,7 +52,7 @@ export default class RestaurantPage extends Component {
             <TouchableOpacity onPress={() => this.setState({showReviews: true})}>
                 <Modal visible={this.state.showReviews}
                   onRequestClose={() => this.setState({showReviews: false})}>
-                  <ReviewsPage />
+                  <ReviewsPage tacos={tacos}/>
                 </Modal>
                 <Text>View All Reviews</Text>
               </TouchableOpacity>
