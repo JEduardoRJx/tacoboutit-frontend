@@ -19,11 +19,11 @@ export default class AddReviewForm extends Component {
     let ratings = [];
     for(let i = 1; i <= 10; i++) {
       if (i !== 10) {
-        ratings.push(<Picker.Item label={String(i)} value={i} />)
-        ratings.push(<Picker.Item label={String(i + .5)} value={i + .5} />)
+        ratings.push(<Picker.Item label={String(i)} value={i} key={i}/>)
+        ratings.push(<Picker.Item label={String(i + .5)} value={i + .5} key={i}/>)
         
       } else {
-        ratings.push(<Picker.Item label={String(i)} value={i} />)
+        ratings.push(<Picker.Item label={String(i)} value={i} key={i}/>)
       }
     }
     return ratings
@@ -39,7 +39,6 @@ export default class AddReviewForm extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <View style={{flex: 2}}>
         <Text>Add Review</Text>

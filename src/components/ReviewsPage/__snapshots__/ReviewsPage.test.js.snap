@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewsPage should match the snapshot 1`] = `
+<ScrollViewMock
+  style={
+    Object {
+      "height": 1334,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 1334,
+      }
+    }
+  >
+    <ReviewCard
+      key="9"
+      taco={
+        Object {
+          "average_rating": 5,
+          "id": 9,
+          "restaurant_id": 2,
+          "reviews": Array [
+            Object {
+              "id": 1,
+              "rating": 7,
+              "review": "its ok",
+              "taco": 9,
+            },
+            Object {
+              "id": 2,
+              "rating": 4,
+              "review": "lame",
+              "taco": 9,
+            },
+            Object {
+              "id": 3,
+              "rating": 4,
+              "review": null,
+              "taco": 9,
+            },
+            Object {
+              "id": 4,
+              "rating": 1,
+              "review": "This taco put my son in the hospital",
+              "taco": 9,
+            },
+            Object {
+              "id": 5,
+              "rating": 10,
+              "review": "The best",
+              "taco": 9,
+            },
+            Object {
+              "id": 6,
+              "rating": 4,
+              "review": "meh",
+              "taco": 9,
+            },
+          ],
+          "type": "Testing testing",
+        }
+      }
+    />
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#00BFFF",
+            "height": 50,
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 16,
+            }
+          }
+        >
+          + Review
+        </Text>
+      </View>
+    </TouchableOpacity>
+  </View>
+</ScrollViewMock>
+`;
+
+exports[`ReviewsPage should match the snapshot 2`] = `
+<ScrollViewMock
+  style={
+    Object {
+      "height": 1334,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "height": 1334,
+      }
+    }
+  >
+    <ReviewCard
+      key="9"
+      taco={
+        Object {
+          "average_rating": 5,
+          "id": 9,
+          "restaurant_id": 2,
+          "reviews": Array [
+            Object {
+              "id": 1,
+              "rating": 7,
+              "review": "its ok",
+              "taco": 9,
+            },
+            Object {
+              "id": 2,
+              "rating": 4,
+              "review": "lame",
+              "taco": 9,
+            },
+            Object {
+              "id": 3,
+              "rating": 4,
+              "review": null,
+              "taco": 9,
+            },
+            Object {
+              "id": 4,
+              "rating": 1,
+              "review": "This taco put my son in the hospital",
+              "taco": 9,
+            },
+            Object {
+              "id": 5,
+              "rating": 10,
+              "review": "The best",
+              "taco": 9,
+            },
+            Object {
+              "id": 6,
+              "rating": 4,
+              "review": "meh",
+              "taco": 9,
+            },
+          ],
+          "type": "Testing testing",
+        }
+      }
+    />
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+    >
+      <View
+        style={
+          Object {
+            "backgroundColor": "#00BFFF",
+            "height": 50,
+            "width": "100%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 16,
+            }
+          }
+        >
+          Cancel
+        </Text>
+      </View>
+    </TouchableOpacity>
+    <AddReviewForm
+      tacos={
+        Array [
+          Object {
+            "average_rating": 5,
+            "id": 9,
+            "restaurant_id": 2,
+            "reviews": Array [
+              Object {
+                "id": 1,
+                "rating": 7,
+                "review": "its ok",
+                "taco": 9,
+              },
+              Object {
+                "id": 2,
+                "rating": 4,
+                "review": "lame",
+                "taco": 9,
+              },
+              Object {
+                "id": 3,
+                "rating": 4,
+                "review": null,
+                "taco": 9,
+              },
+              Object {
+                "id": 4,
+                "rating": 1,
+                "review": "This taco put my son in the hospital",
+                "taco": 9,
+              },
+              Object {
+                "id": 5,
+                "rating": 10,
+                "review": "The best",
+                "taco": 9,
+              },
+              Object {
+                "id": 6,
+                "rating": 4,
+                "review": "meh",
+                "taco": 9,
+              },
+            ],
+            "type": "Testing testing",
+          },
+        ]
+      }
+    />
+  </View>
+</ScrollViewMock>
+`;
