@@ -20,26 +20,46 @@ describe('RestaurantPage', () => {
         id: 1,
         restaurant: 1,
         type: "al pastor",
+        reviews: [
+          { taco: 1, rating: 4, review: 'Great spot' }
+        ],
+        average_rating: 5,
       },
        {
         id: 2,
         restaurant: 1,
         type: "carne asada",
+        reviews: [
+          { taco: 1, rating: 4, review: 'Great spot' }
+        ],
+        average_rating: 5,
       },
       {
         id: 3,
         restaurant: 1,
         type: "cabeza",
+        reviews: [
+          { taco: 1, rating: 4, review: 'Great spot' },
+        ],
+        average_rating: 5,
       },
        {
         id: 8,
         restaurant: 1,
         type: "testing",
+        reviews: [
+          { taco: 1, rating: 4, review: 'Great spot' }
+        ],
+        average_rating: 5,
       },
       {
         id: 13,
         restaurant: 1,
         type: "carnitas",
+        reviews: [
+          { taco: 1, rating: 4, review: 'Great spot' }
+        ],
+        average_rating: 5,
       },
     ],
     url: "https://www.yelp.com/biz/guadalajara-mexican-restaurant-westminster?adjust_creative=pxQ3XEqH9sM15FQYWsuBXQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=pxQ3XEqH9sM15FQYWsuBXQ",
