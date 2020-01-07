@@ -28,5 +28,10 @@ export const addReview = async (tacoId, rating, review) => {
       rating,
       review,
     }),
-  })
+  });
+  if(!response.ok) {
+    return Error('Failed to add review');
+  }
+  const resp = await response.json();
+  return resp;
 }
