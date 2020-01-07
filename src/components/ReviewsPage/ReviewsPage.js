@@ -11,7 +11,6 @@ export default class ReviewsPages extends Component {
   
   render() {
     const { tacos } = this.props;
-    console.log(tacos);
     return (
       <ScrollView>
       <View>

@@ -446,6 +446,144 @@ exports[`RestaurantPage renders correctly 1`] = `
             />
           </View>
         </View>
+        <View
+          accessible={true}
+          focusable={true}
+          isTVSelectable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Modal
+            hardwareAccelerated={false}
+            onRequestClose={[Function]}
+            visible={false}
+          >
+            <RCTScrollView>
+              <View>
+                <View>
+                  <View>
+                    <Text>
+                      Type: 
+                      al pastor
+                    </Text>
+                    <Text>
+                      Average Rating: 
+                      5
+                      /10
+                    </Text>
+                    <View>
+                      <Text>
+                        Rating: 
+                        4
+                        /10
+                      </Text>
+                      <Text>
+                        Great spot
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <Text>
+                      Type: 
+                      carne asada
+                    </Text>
+                    <Text>
+                      Average Rating: 
+                      5
+                      /10
+                    </Text>
+                    <View>
+                      <Text>
+                        Rating: 
+                        4
+                        /10
+                      </Text>
+                      <Text>
+                        Great spot
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <Text>
+                      Type: 
+                      cabeza
+                    </Text>
+                    <Text>
+                      Average Rating: 
+                      5
+                      /10
+                    </Text>
+                    <View>
+                      <Text>
+                        Rating: 
+                        4
+                        /10
+                      </Text>
+                      <Text>
+                        Great spot
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <Text>
+                      Type: 
+                      testing
+                    </Text>
+                    <Text>
+                      Average Rating: 
+                      5
+                      /10
+                    </Text>
+                    <View>
+                      <Text>
+                        Rating: 
+                        4
+                        /10
+                      </Text>
+                      <Text>
+                        Great spot
+                      </Text>
+                    </View>
+                  </View>
+                  <View>
+                    <Text>
+                      Type: 
+                      carnitas
+                    </Text>
+                    <Text>
+                      Average Rating: 
+                      5
+                      /10
+                    </Text>
+                    <View>
+                      <Text>
+                        Rating: 
+                        4
+                        /10
+                      </Text>
+                      <Text>
+                        Great spot
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </View>
+            </RCTScrollView>
+          </Modal>
+          <Text>
+            View All Reviews
+          </Text>
+        </View>
       </View>
     </View>
   </RCTScrollView>
