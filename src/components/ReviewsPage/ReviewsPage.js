@@ -21,7 +21,6 @@ export default class ReviewsPages extends Component {
   
   render() {
     const { tacos } = this.props;
-    console.log(tacos);
     return (
       <ScrollView style={{height: Dimensions.get('window').height}}>
       <View style={{height: Dimensions.get('window').height}}>
