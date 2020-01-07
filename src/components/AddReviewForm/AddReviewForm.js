@@ -40,12 +40,21 @@ export default class AddReviewForm extends Component {
   }
 
   submitNewReview = async () => {
-    const { tacoId, rating, review } = this.state
-    console.log('ay', tacoId, rating, review)
-    const response = await addReview(tacoId, rating, review)
-    if(!response.ok) {
-      this.setState({error: 'Failed to post review'})
+    let { tacoId, rating, review } = this.state
+    let response;
+    const { updateLocalReviews } = this.props
+    if(this.state.review === '') {
+      response = await addReview(tacoId, rating)
+      if(!response.ok) {
+        this.setState({error: 'Failed to post review'})
+      }
+    } else {
+      const response = await addReview(tacoId, rating, review)
+      if(!response.ok) {
+        this.setState({error: 'Failed to post review'})
+      }
     }
+    updateLocalReviews(response)
   }
 
   render() {
