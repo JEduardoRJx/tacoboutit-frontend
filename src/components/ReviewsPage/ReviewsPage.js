@@ -20,7 +20,7 @@ export default class ReviewsPages extends Component {
   }
   
   render() {
-    const { tacos } = this.props;
+    const { tacos, updateLocalReviews } = this.props;
     return (
       <ScrollView style={{height: Dimensions.get('window').height}}>
         <View style={{height: Dimensions.get('window').height}}>
@@ -30,7 +30,7 @@ export default class ReviewsPages extends Component {
               {this.state.toggleForm === true ? <Text style={{color: 'white', fontSize: 16}}>Cancel</Text> : <Text style={{color: 'white', fontSize: 16}}>+ Review</Text>}
             </View>
           </TouchableOpacity>
-          {this.state.toggleForm && <AddReviewForm  tacos={tacos}/>}
+          {(this.state.toggleForm && tacos.length > 0) &&  <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} />}
         </View>
       </ScrollView>
     )

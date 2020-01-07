@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button, Picker, TextInput } from 'react-native';
-// import { TextInput } from 'react-native-gesture-handler';
+import { addReview } from '../../apiCalls'
 
 export default class AddReviewForm extends Component {
   state = {
     tacoId: this.props.tacos[0].id,
     rating: 1,
     review: '',
-    type: this.props.tacos[0].type
+    type: this.props.tacos[0].type, 
+    error: ''
   }
 
   renderTacoTypes = () => {
@@ -38,6 +39,24 @@ export default class AddReviewForm extends Component {
     this.setState({rating: Number(itemValue)})
   }
 
+  submitNewReview = async () => {
+    let { tacoId, rating, review } = this.state
+    let response;
+    const { updateLocalReviews } = this.props
+    if(this.state.review === '') {
+      response = await addReview(tacoId, rating)
+      if(!response.ok) {
+        this.setState({error: 'Failed to post review'})
+      }
+    } else {
+      const response = await addReview(tacoId, rating, review)
+      if(!response.ok) {
+        this.setState({error: 'Failed to post review'})
+      }
+    }
+    updateLocalReviews(response)
+  }
+
   render() {
     return (
       <View style={{flex: 2}}>
@@ -55,11 +74,12 @@ export default class AddReviewForm extends Component {
           multiline={true}
           numberOfLines={4}
           maxLength={50}
+          placeholder='Add A Review'
           onChangeText={(text) => {
             this.setState({review: text})
           }}
           />
-        <Button title='Submit' />
+        <Button onPress={() => this.submitNewReview()} title='Submit' />
       </View>
     )
   }

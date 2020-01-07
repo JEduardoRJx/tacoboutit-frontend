@@ -19,7 +19,7 @@ export default class RestaurantPage extends Component {
   }
 
   render() {
-    const { restaurant, submitTaco } = this.props;
+    const { restaurant, submitTaco, updateLocalReviews } = this.props;
     const id = restaurant.id;
     const tacos = restaurant.tacos;
     const status = restaurant.isClosed ? 'Closed' : 'Open';
@@ -52,7 +52,7 @@ export default class RestaurantPage extends Component {
             <TouchableOpacity onPress={() => this.setState({showReviews: true})}>
                 <Modal visible={this.state.showReviews}
                   onRequestClose={() => this.setState({showReviews: false})}>
-                  <ReviewsPage tacos={tacos}/>
+                  <ReviewsPage tacos={tacos} updateLocalReviews={updateLocalReviews} />
                 </Modal>
                 <Text>View All Reviews</Text>
               </TouchableOpacity>
