@@ -40,7 +40,6 @@ export class App extends Component {
       this.setState({ restaurants, isLoading: false });
       
     } catch {
-      console.log('error detected');
       const restaurants = await getRestaurants();
       this.setState({ error: 'Failed to get tacos by location', restaurants, isLoading: false });
     }

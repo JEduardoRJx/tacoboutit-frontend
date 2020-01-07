@@ -32,7 +32,6 @@ export default class AddTacoButton extends Component {
               style={{height: 50, width: '100%'}}
               onValueChange={(itemValue, itemIndex) => {
                 this.setState({selectedType: itemValue});
-                console.log(this.state.selectedType);
               }
               }>
               <Picker.Item label="Carne Asada" value="carne asada" />

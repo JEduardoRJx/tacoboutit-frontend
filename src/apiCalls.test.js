@@ -1,4 +1,4 @@
-import { getRestaurants, newTaco } from './apiCalls';
+import { getRestaurants, newTaco, addReview } from './apiCalls';
 import { mockRestaurants } from '../mockRestaurants';
 
 describe('getRestaurants', () => {
@@ -84,4 +84,53 @@ describe('newTaco', () => {
       expect(error).toEqual(Error('Failed to post taco'));
     }
   });
-})
+});
+
+describe('addReview', () => {
+  const mockResponse = { 
+    "taco": 9,
+    "rating": 4,
+    "review": "meh"
+  };
+  beforeEach(() => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve(mockResponse),
+      })
+    });
+  });
+  it('should be called with the correct url and body', async () => {
+    const expectedBody = {
+      "body": "{\"taco\":1,\"rating\":10,\"review\":\"Test Review\"}",
+      "headers": {
+        "content-type": "application/json",
+      },
+      "method": "POST",
+    };
+    const expectedUrl = 'https://tacoboutit-test.herokuapp.com/api/v1/reviews/';
+    await addReview(1, 10, 'Test Review');
+    expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
+  });
+  it('should return a review object if the response is successful', async () => {
+    const response = await addReview(1, 10, 'Test Review');
+    expect(response).toEqual(mockResponse);
+  });
+  it('should return an error if the fetch fails', async () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({ ok: false });
+    });
+    const response = await addReview(1, 10, 'Test Review');
+    expect(response).toEqual(Error('Failed to add review'));
+  }); 
+  it('should return an error if the promise rejects', async () => {
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.reject(Error('Failed to add review'));
+    });
+    try {
+      addReview(1, 10, 'Test Review');
+    } catch(error) {
+      expect(error).toEqual(Error('Failed to add review'));
+    }
+  });
+});

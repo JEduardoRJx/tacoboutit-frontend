@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewCard if there is no average rating or reviews alternate text should be displayed 1`] = `
+<View>
+  <Text>
+    Type: 
+    Testing testing
+  </Text>
+  <Text>
+    No ratings yet
+  </Text>
+  <Text>
+    Be the first to add a review
+  </Text>
+</View>
+`;
+
+exports[`ReviewCard should match the snapshot 1`] = `
+<View>
+  <Text>
+    Type: 
+    Testing testing
+  </Text>
+  <Text>
+    Average Rating: 
+    5
+    /10
+  </Text>
+  <View
+    key="its ok1"
+  >
+    <Text>
+      Rating: 
+      7
+      /10
+    </Text>
+    <Text>
+      its ok
+    </Text>
+  </View>
+  <View
+    key="lame2"
+  >
+    <Text>
+      Rating: 
+      4
+      /10
+    </Text>
+    <Text>
+      lame
+    </Text>
+  </View>
+  <View
+    key="null3"
+  >
+    <Text>
+      Rating: 
+      4
+      /10
+    </Text>
+    <Text />
+  </View>
+  <View
+    key="This taco put my son in the hospital4"
+  >
+    <Text>
+      Rating: 
+      1
+      /10
+    </Text>
+    <Text>
+      This taco put my son in the hospital
+    </Text>
+  </View>
+  <View
+    key="The best5"
+  >
+    <Text>
+      Rating: 
+      10
+      /10
+    </Text>
+    <Text>
+      The best
+    </Text>
+  </View>
+  <View
+    key="meh6"
+  >
+    <Text>
+      Rating: 
+      4
+      /10
+    </Text>
+    <Text>
+      meh
+    </Text>
+  </View>
+</View>
+`;

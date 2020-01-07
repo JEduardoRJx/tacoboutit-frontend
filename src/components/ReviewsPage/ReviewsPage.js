@@ -23,15 +23,15 @@ export default class ReviewsPages extends Component {
     const { tacos } = this.props;
     return (
       <ScrollView style={{height: Dimensions.get('window').height}}>
-      <View style={{height: Dimensions.get('window').height}}>
-        {this.renderReviewCards()}
-        <TouchableOpacity onPress={() => this.toggleReviewForm ()}>
-          <View style={{height: 50, backgroundColor: '#00BFFF', width: '100%'}}>
-            {this.state.toggleForm === true ? <Text style={{color: 'white', fontSize: 16}}>Cancel</Text> : <Text style={{color: 'white', fontSize: 16}}>+ Review</Text>}
-          </View>
-        </TouchableOpacity>
-        {this.state.toggleForm && <AddReviewForm  tacos={tacos}/>}
-      </View>
+        <View style={{height: Dimensions.get('window').height}}>
+          {this.renderReviewCards()}
+          <TouchableOpacity onPress={() => this.toggleReviewForm ()}>
+            <View style={{height: 50, backgroundColor: '#00BFFF', width: '100%'}}>
+              {this.state.toggleForm === true ? <Text style={{color: 'white', fontSize: 16}}>Cancel</Text> : <Text style={{color: 'white', fontSize: 16}}>+ Review</Text>}
+            </View>
+          </TouchableOpacity>
+          {this.state.toggleForm && <AddReviewForm  tacos={tacos}/>}
+        </View>
       </ScrollView>
     )
   }

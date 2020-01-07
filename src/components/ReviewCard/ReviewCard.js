@@ -17,7 +17,7 @@ export default class ReviewCard extends Component {
     return (
       <View>
         <Text>Type: {taco.type}</Text>
-        { taco.average_rating === null ? <Text>No rating yet</Text> : <Text>Average Rating: {taco.average_rating}/10</Text>}
+        { taco.average_rating === null ? <Text>No ratings yet</Text> : <Text>Average Rating: {taco.average_rating}/10</Text>}
         {!this.props.taco.reviews.length ? <Text>Be the first to add a review</Text> : this.renderReviews()}
       </View>
     )
