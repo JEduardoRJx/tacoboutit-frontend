@@ -14,7 +14,6 @@ export default class ReviewCard extends Component {
 
   render() {
     const { taco } = this.props;
-    console.log(taco);
     return (
       <View>
         <Text>Type: {taco.type}</Text>
