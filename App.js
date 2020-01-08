@@ -7,6 +7,7 @@ import {
   SafeAreaView,
   Image,
   Modal,
+  StatusBar,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { mockRestaurants } from "./mockRestaurants";
@@ -173,7 +174,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#ccc",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingTop: StatusBar.currentHeight,
   }
 });
 

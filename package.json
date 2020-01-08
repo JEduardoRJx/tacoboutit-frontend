@@ -6,7 +6,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest -o --watch"
+    "test": "jest -o --watch",
+    "coverage": "jest --coverage --all --watchAll=false"
   },
   "dependencies": {
     "expo": "~36.0.0",

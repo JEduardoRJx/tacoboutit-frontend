@@ -61,4 +61,10 @@ describe('ReviewsPage', () => {
     wrapper.instance().toggleReviewForm();
     expect(wrapper.state('toggleForm')).toEqual(true);
   });
+  it('when the touchable opacity is pressed toggleReviewForm should be called', () => {
+    const mockToggleReviewForm = jest.fn();
+    wrapper.instance().toggleReviewForm = mockToggleReviewForm;
+    wrapper.find('TouchableOpacity').simulate('press');
+    expect(mockToggleReviewForm).toHaveBeenCalled();
+  });
 });
