@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button } from 'react-native';
+import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button, KeyboardAvoidingView } from 'react-native';
 import ReviewCard from '../ReviewCard/ReviewCard';
 import AddReviewForm from '../AddReviewForm/AddReviewForm';
 import { LinearGradient } from "expo-linear-gradient";
@@ -35,17 +35,23 @@ export default class ReviewsPages extends Component {
   
   render() {
     const { tacos, updateLocalReviews } = this.props;
-    const reviewHeight = this.state.toggleForm ? '50%' : '90%'
+    const reviewHeight = this.state.toggleForm ? 1 : 9
     return (
+      
       <LinearGradient
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
         style={styles.container}
       >
-        <View style={{height: reviewHeight}}>
-          {this.renderReviewCards()}
+        
+        <View style={{flex: reviewHeight, backgroundColor: 'green'}}>
+          {/* {this.renderReviewCards()} */}
         </View>
-        {(this.state.toggleForm && tacos.length > 0) && <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} />}
-        {this.toggleAddReviewButton(tacos)}
+        <KeyboardAvoidingView style={{flex: 1}}
+          behavior="padding" 
+        >
+          {(this.state.toggleForm && tacos.length > 0) && <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} />}
+          {this.toggleAddReviewButton(tacos)}
+        </KeyboardAvoidingView>
       </LinearGradient>
     )
   }
@@ -54,7 +60,7 @@ export default class ReviewsPages extends Component {
 
 const styles = StyleSheet.create({
   container: {height: Dimensions.get('window').height},
-  buttonStyle: {height: '10%', backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center', 
+  buttonStyle: {flex: 1, backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center', 
   alignItems: 'center'},
   buttonTextStyle: {color: 'white', fontSize: 32},
 })
