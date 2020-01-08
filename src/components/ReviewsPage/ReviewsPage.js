@@ -35,7 +35,7 @@ export default class ReviewsPages extends Component {
   
   render() {
     const { tacos, updateLocalReviews } = this.props;
-    const reviewHeight = this.state.toggleForm ? '60%' : '90%'
+    const reviewHeight = this.state.toggleForm ? '50%' : '90%'
     return (
       <LinearGradient
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
@@ -57,5 +57,4 @@ const styles = StyleSheet.create({
   buttonStyle: {height: '10%', backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center', 
   alignItems: 'center'},
   buttonTextStyle: {color: 'white', fontSize: 32},
-
 })
