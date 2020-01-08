@@ -82,7 +82,7 @@ export default class AddReviewForm extends Component {
             </Picker>
           </View>
         </View>
-        
+
         <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 20}}>
               <TextInput
               style={{ fontSize: 16}}
@@ -98,12 +98,6 @@ export default class AddReviewForm extends Component {
 
         <View style={styles.buttonsContainer}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => toggleReviewForm()}>
-                <Text style={styles.buttonText}>Cancel</Text>
-              </TouchableOpacity>
-          </View>
-            
-          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <TouchableOpacity style={styles.buttonStyle} onPress={() => this.submitNewReview()}>
               <Text style={styles.buttonText}>Submit</Text>
             </TouchableOpacity>
@@ -117,7 +111,7 @@ export default class AddReviewForm extends Component {
 
 const styles = StyleSheet.create({
   buttonsContainer: {backgroundColor: '#DCDCDC', flex: 1, flexDirection: 'row', justifyContent: 'space-around'},
-  buttonStyle: {width: '90%',
+  buttonStyle: {width: '70%',
   height: '80%', backgroundColor: '#00BFFF', justifyContent: 'center', alignContent: 'center', borderRadius: 50},
-  buttonText: {textAlign: 'center', color: 'white', fontSize: 20},
+  buttonText: {textAlign: 'center', color: 'white', fontSize: 24},
 })
