@@ -164,6 +164,11 @@ exports[`RestaurantPage renders correctly 1`] = `
                   "textColor": undefined,
                   "value": "carnitas",
                 },
+                Object {
+                  "label": "Vegan",
+                  "textColor": undefined,
+                  "value": "vegan",
+                },
               ]
             }
             onChange={[Function]}
@@ -1068,9 +1073,32 @@ exports[`RestaurantPage renders correctly 1`] = `
               </View>
             </ViewManagerAdapter_ExpoLinearGradient>
           </Modal>
-          <Text>
-            View All Reviews
-          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "backgroundColor": "#00BFFF",
+                  "borderRadius": 30,
+                  "color": "white",
+                  "fontSize": 24,
+                  "height": 50,
+                  "textAlign": "center",
+                  "textAlignVertical": "center",
+                  "width": "70%",
+                }
+              }
+            >
+              View All Reviews
+            </Text>
+          </View>
         </View>
       </View>
     </View>

@@ -117,6 +117,11 @@ exports[`AddTacoButton renders correctly 1`] = `
                 "textColor": undefined,
                 "value": "carnitas",
               },
+              Object {
+                "label": "Vegan",
+                "textColor": undefined,
+                "value": "vegan",
+              },
             ]
           }
           onChange={[Function]}
