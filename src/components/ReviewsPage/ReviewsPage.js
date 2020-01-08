@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button } from 'react-native';
+import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button, KeyboardAvoidingView } from 'react-native';
 import ReviewCard from '../ReviewCard/ReviewCard';
-import AddReviewForm from '../AddReviewForm/AddReviewForm'
+import AddReviewForm from '../AddReviewForm/AddReviewForm';
+import { LinearGradient } from "expo-linear-gradient";
+
 
 export default class ReviewsPages extends Component {
   state = {
-    toggleForm: false,
+    toggleForm: false
   }
 
   renderReviewCards = () => {
@@ -18,21 +20,49 @@ export default class ReviewsPages extends Component {
   toggleReviewForm = () => {
     this.setState({toggleForm: !this.state.toggleForm})
   }
+
+  toggleAddReviewButton = (tacos) => {
+    if(tacos.length) {
+      return (
+        <TouchableOpacity onPress={() => this.toggleReviewForm ()} style={styles.buttonStyle}>
+          {this.state.toggleForm ? <Text style={styles.buttonTextStyle}>Cancel</Text> : <Text style={styles.buttonTextStyle}>Add Review</Text>}
+        </TouchableOpacity>
+      )
+    } else {
+      return (<Text style={{color: 'white', fontSize: 32, textAlign: 'center'}}>Nothing To Review</Text>)
+    }
+  }
   
   render() {
     const { tacos, updateLocalReviews } = this.props;
-    return (
-      <ScrollView style={{height: Dimensions.get('window').height}}>
-        <View style={{height: Dimensions.get('window').height}}>
+    const reviewsHeight = this.state.toggleForm ? 1 : 9
+    return ( 
+      <LinearGradient
+        colors={["#F0CB35", "#D56C2C", "#C02425"]}
+        style={styles.container}
+      >
+        <View style={{flex: reviewsHeight}}>
+          <ScrollView>
           {this.renderReviewCards()}
-          <TouchableOpacity onPress={() => this.toggleReviewForm ()}>
-            <View style={{height: 50, backgroundColor: '#00BFFF', width: '100%'}}>
-              {this.state.toggleForm === true ? <Text style={{color: 'white', fontSize: 16}}>Cancel</Text> : <Text style={{color: 'white', fontSize: 16}}>+ Review</Text>}
-            </View>
-          </TouchableOpacity>
-          {(this.state.toggleForm && tacos.length > 0) &&  <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} />}
+          </ScrollView>
         </View>
-      </ScrollView>
+        <KeyboardAvoidingView style={{flex: 1}}
+          behavior="padding" 
+          enabled
+        >
+          {(this.state.toggleForm && tacos.length > 0) && <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} toggleReviewForm={this.toggleReviewForm}/>}
+          {this.toggleAddReviewButton(tacos)}
+          {/* <View style={{flex: 1.1}} /> */}
+        </KeyboardAvoidingView>
+      </LinearGradient>
     )
   }
 }
+
+
+const styles = StyleSheet.create({
+  container: {height: Dimensions.get('window').height},
+  buttonStyle: {flex: 1, backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center', 
+  alignItems: 'center'},
+  buttonTextStyle: {color: 'white', fontSize: 32},
+})
