@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button } from 'react-native';
 import ReviewCard from '../ReviewCard/ReviewCard';
-import AddReviewForm from '../AddReviewForm/AddReviewForm'
+import AddReviewForm from '../AddReviewForm/AddReviewForm';
+import { LinearGradient } from "expo-linear-gradient";
+
 
 export default class ReviewsPages extends Component {
   state = {
@@ -35,20 +37,23 @@ export default class ReviewsPages extends Component {
     const { tacos, updateLocalReviews } = this.props;
     const reviewHeight = this.state.toggleForm ? '60%' : '90%'
     return (
-      <View style={styles.container}>
-        <View style={{height: reviewHeight, backgroundColor: 'green'}}>
+      <LinearGradient
+        colors={["#F0CB35", "#D56C2C", "#C02425"]}
+        style={styles.container}
+      >
+        <View style={{height: reviewHeight}}>
           {this.renderReviewCards()}
         </View>
         {(this.state.toggleForm && tacos.length > 0) && <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} />}
         {this.toggleAddReviewButton(tacos)}
-      </View>
+      </LinearGradient>
     )
   }
 }
 
 
 const styles = StyleSheet.create({
-  container: {height: Dimensions.get('window').height, backgroundColor: 'lightblue'},
+  container: {height: Dimensions.get('window').height},
   buttonStyle: {height: '10%', backgroundColor: '#00BFFF', width: '100%', justifyContent: 'flex-end', padding: 10, 
   alignItems: 'center', flex: 1},
   buttonTextStyle: {color: 'white', fontSize: 32}
