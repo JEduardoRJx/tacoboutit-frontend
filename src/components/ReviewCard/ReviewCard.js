@@ -26,8 +26,6 @@ export default class ReviewCard extends Component {
           <View style={{ padding: 10}}>
             {!this.props.taco.reviews.length ? <Text>Be the first to add a review</Text> : this.renderReviews()}
           </View>
-        {/* <Text style={{backgroundColor: 'tomato', textAlign: 'center', color: 'white', justifyContent: 'space-between', fontSize: 22}}>{taco.type.toUpperCase()} {rating}</Text> */}
-
       </View>
     )
   }
