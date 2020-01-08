@@ -5,7 +5,7 @@ export default class ReviewCard extends Component {
   renderReviews = () => {
     const reviews = this.props.taco.reviews;
     return reviews.map((review, i) => (
-      <View key={`${review.review}${review.id}`} style={{ borderBottomColor: 'rgba(0, 0, 0, 0.3)', borderBottomWidth: 2, borderRadius: 30, marginBottom: 20, alignItems: 'center'}}>
+      <View key={`${review.review}${review.id}`} style={styles.individualReview}>
         <Text style={{color: 'white', fontSize: 20, textAlign: 'center'}}>{review.rating}/10</Text>
         <Text style={{color: 'white', fontSize: 20, textAlign: 'center'}}>{review.review}</Text>
       </View>
@@ -37,5 +37,6 @@ const styles = StyleSheet.create({
   reviewCardStyling: {backgroundColor: 'rgba(225, 225, 225, 0.3)', marginTop: 15, margin: 20, borderRadius: 20, overflow: 'hidden'},
   textHeader: {
     // backgroundColor: 'tomato', 
-    textAlign: 'center', color: 'white', justifyContent: 'space-between', fontSize: 22, flex: 1, fontWeight: 'bold'}
+    textAlign: 'center', color: 'white', justifyContent: 'space-between', fontSize: 22, flex: 1, fontWeight: 'bold'},
+    individualReview: { borderBottomColor: 'rgba(0, 0, 0, 0.3)', borderBottomWidth: 2, borderRadius: 30, marginBottom: 20, alignItems: 'center'}
 })
