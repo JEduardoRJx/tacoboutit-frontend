@@ -59,7 +59,7 @@ export default class AddReviewForm extends Component {
 
   render() {
     return (
-      <View style={{height: '30%', backgroundColor: 'green', justifyContent: 'space-around'}}>
+      <View style={{height: '40%', backgroundColor: 'green', justifyContent: 'space-around'}}>
         <View style={{backgroundColor: 'red', flex: 1, flexDirection: 'row'}}>
           <View style={{backgroundColor: 'tomato', flex: 1}}>
             <Text>Select Taco Type</Text>
@@ -82,7 +82,7 @@ export default class AddReviewForm extends Component {
           </View>
           
         </View>
-        <View style={{backgroundColor: 'gray', flex: 1}}>
+        <View style={{backgroundColor: 'gray', flex: 1.75}}>
 
         </View>
 
