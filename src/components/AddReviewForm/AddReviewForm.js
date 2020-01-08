@@ -58,6 +58,8 @@ export default class AddReviewForm extends Component {
   }
 
   render() {
+    const { toggleReviewForm } = this.props;
+    console.log(this.props)
     return (
       <View style={{flex: 4, backgroundColor: '#DCDCDC', justifyContent: 'space-around'}}>
         <View style={{flex: 1.25, flexDirection: 'row'}}>
@@ -70,7 +72,6 @@ export default class AddReviewForm extends Component {
                 {this.renderTacoTypes()}
             </Picker>
           </View>
-
           <View style={{flex: 1, justifyContent: 'center'}}>
             <Text style={{textAlign: 'center', fontSize: 16}}>Select Rating</Text>
             <Picker selectedValue={this.state.rating} 
@@ -80,8 +81,8 @@ export default class AddReviewForm extends Component {
               {this.renderRatings()}
             </Picker>
           </View>
-          
         </View>
+        
         <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 20}}>
               <TextInput
               style={{ fontSize: 16}}
@@ -95,44 +96,28 @@ export default class AddReviewForm extends Component {
           />
         </View>
 
-        <View style={{backgroundColor: '#DCDCDC', flex: 1, flexDirection: 'row', justifyContent: 'space-around'}}>
-
+        <View style={styles.buttonsContainer}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <TouchableOpacity onPress={() => this.submitNewReview()} style={{width: '90%',
-        height: '80%', backgroundColor: '#00BFFF', justifyContent: 'center', alignContent: 'center', borderRadius: 50}}>
-                <Text style={{textAlign: 'center', color: 'white', fontSize: 20}}>Cancel</Text>
+            <TouchableOpacity style={styles.buttonStyle} onPress={() => toggleReviewForm()}>
+                <Text style={styles.buttonText}>Cancel</Text>
               </TouchableOpacity>
           </View>
             
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-            <TouchableOpacity onPress={() => this.submitNewReview()} style={{width: '90%',
-        height: '80%', backgroundColor: '#00BFFF', justifyContent: 'center', alignContent: 'center', borderRadius: 50}}>
-              <Text style={{textAlign: 'center', color: 'white', fontSize: 20}}>Submit</Text>
+            <TouchableOpacity style={styles.buttonStyle} onPress={() => this.submitNewReview()}>
+              <Text style={styles.buttonText}>Submit</Text>
             </TouchableOpacity>
           </View>
-
         </View>
-        
-        {/* <TextInput
-          multiline={true}
-          numberOfLines={4}
-          maxLength={50}
-          placeholder='Add A Review'
-          onChangeText={(text) => {
-            this.setState({review: text})
-          }}
-          /> */}
-          {/* <Button title='submit' /> */}
-        {/* <TouchableOpacity onPress={() => this.submitNewReview()} style={styles.buttonStyle}>
-            <Text style={styles.buttonTextStyle}>SUBMIT</Text>
-          </TouchableOpacity> */}
+
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-  buttonStyle: {flex: 1, backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center'},
-  pickerStyle: {},
-  pickerText: {}
+  buttonsContainer: {backgroundColor: '#DCDCDC', flex: 1, flexDirection: 'row', justifyContent: 'space-around'},
+  buttonStyle: {width: '90%',
+  height: '80%', backgroundColor: '#00BFFF', justifyContent: 'center', alignContent: 'center', borderRadius: 50},
+  buttonText: {textAlign: 'center', color: 'white', fontSize: 20},
 })

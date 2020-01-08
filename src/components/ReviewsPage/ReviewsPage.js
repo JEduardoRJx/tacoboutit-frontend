@@ -48,7 +48,7 @@ export default class ReviewsPages extends Component {
           behavior="padding" 
           enabled
         >
-          {(this.state.toggleForm && tacos.length > 0) && <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} />}
+          {(this.state.toggleForm && tacos.length > 0) && <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} toggleReviewForm={this.toggleReviewForm}/>}
           {this.toggleAddReviewButton(tacos)}
           {/* <View style={{flex: 1.1}} /> */}
         </KeyboardAvoidingView>
