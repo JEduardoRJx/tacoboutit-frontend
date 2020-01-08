@@ -39,6 +39,7 @@ export default class AddTacoButton extends Component {
               <Picker.Item label="Cabeza" value="cabeza" />
               <Picker.Item label="Cabeza" value="cabeza" />
               <Picker.Item label="Carnitas" value="carnitas" />
+              <Picker.Item label="Vegan" value="vegan" />
             </Picker>
             <TouchableOpacity 
               onPress={() => this.handleSubmit()}>
