@@ -36,7 +36,6 @@ export default class ReviewCard extends Component {
 const styles = StyleSheet.create({
   reviewCardStyling: {backgroundColor: 'rgba(225, 225, 225, 0.3)', marginTop: 15, margin: 20, borderRadius: 20, overflow: 'hidden'},
   textHeader: {
-    // backgroundColor: 'tomato', 
     textAlign: 'center', color: 'white', justifyContent: 'space-between', fontSize: 22, flex: 1, fontWeight: 'bold'},
     individualReview: { borderBottomColor: 'rgba(0, 0, 0, 0.3)', borderBottomWidth: 2, borderRadius: 30, marginBottom: 20, alignItems: 'center'}
 })
