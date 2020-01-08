@@ -5,9 +5,9 @@ export default class ReviewCard extends Component {
   renderReviews = () => {
     const reviews = this.props.taco.reviews;
     return reviews.map((review, i) => (
-      <View key={`${review.review}${review.id}`}>
-        <Text>Rating: {review.rating}/10</Text>
-        <Text>{review.review}</Text>
+      <View key={`${review.review}${review.id}`} style={{ borderBottomColor: 'rgba(0, 0, 0, 0.3)', borderBottomWidth: 2, borderRadius: 30, marginBottom: 20, alignItems: 'center'}}>
+        <Text style={{color: 'white', fontSize: 20, textAlign: 'center'}}>{review.rating}/10</Text>
+        <Text style={{color: 'white', fontSize: 20, textAlign: 'center'}}>{review.review}</Text>
       </View>
     ));
   }
