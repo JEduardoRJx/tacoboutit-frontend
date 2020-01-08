@@ -55,7 +55,7 @@ export default class ReviewsPages extends Component {
 const styles = StyleSheet.create({
   container: {height: Dimensions.get('window').height},
   buttonStyle: {height: '10%', backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center', 
-  alignItems: 'center', flex: 1},
+  alignItems: 'center'},
   buttonTextStyle: {color: 'white', fontSize: 32},
 
 })
