@@ -60,15 +60,36 @@ export default class AddReviewForm extends Component {
   render() {
     return (
       <View style={{height: '30%', backgroundColor: 'green', justifyContent: 'space-around'}}>
-        {/* <Text>Add Review</Text> */}
-        {/* <Text>Type:</Text> */}
-        {/* <Picker
-          onValueChange={(itemValue, itemIndex) => this.handleTacoTypeChange(itemValue, itemIndex)}>{this.renderTacoTypes()}</Picker> */}
-        {/* <Text>Rating:</Text> */}
-        {/* <Picker 
-        selectedValue={this.state.rating}
-        onValueChange={(itemValue) => this.handleRatingChange(itemValue)}
-        >{this.renderRatings()}</Picker> */}
+        <View style={{backgroundColor: 'red', flex: 1, flexDirection: 'row'}}>
+          <View style={{backgroundColor: 'tomato', flex: 1}}>
+            <Text>Select Taco Type</Text>
+            <Picker selectedValue={this.state.type}
+              onValueChange={
+                (itemValue, itemIndex) => this.handleTacoTypeChange(itemValue, itemIndex)
+              }>
+                {this.renderTacoTypes()}
+            </Picker>
+          </View>
+
+          <View style={{backgroundColor: 'lightblue', flex: 1}}>
+            <Text>Select Rating</Text>
+            <Picker selectedValue={this.state.rating} 
+              onValueChange={
+                (itemValue) => this.handleRatingChange(itemValue)
+              }>
+              {this.renderRatings()}
+            </Picker>
+          </View>
+          
+        </View>
+        <View style={{backgroundColor: 'gray', flex: 1}}>
+
+        </View>
+
+        <View style={{backgroundColor: 'purple', flex: 1}}>
+          
+        </View>
+        
         {/* <TextInput
           multiline={true}
           numberOfLines={4}
@@ -88,5 +109,7 @@ export default class AddReviewForm extends Component {
 }
 
 const styles = StyleSheet.create({
-  buttonStyle: {flex: 1, backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center'}
+  buttonStyle: {flex: 1, backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center'},
+  pickerStyle: {},
+  pickerText: {}
 })
