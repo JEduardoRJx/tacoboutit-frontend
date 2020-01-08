@@ -35,14 +35,16 @@ export default class ReviewsPages extends Component {
   
   render() {
     const { tacos, updateLocalReviews } = this.props;
-    const reviewHeight = this.state.toggleForm ? 1 : 9
+    const reviewsHeight = this.state.toggleForm ? 1 : 9
     return ( 
       <LinearGradient
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
         style={styles.container}
       >
-        <View style={{flex: reviewHeight}}>
-          {/* {this.renderReviewCards()} */}
+        <View style={{flex: reviewsHeight}}>
+          <ScrollView>
+          {this.renderReviewCards()}
+          </ScrollView>
         </View>
         <KeyboardAvoidingView style={{flex: 1}}
           behavior="padding" 
