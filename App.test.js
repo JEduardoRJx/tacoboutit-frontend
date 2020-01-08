@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import * as Permissions from 'expo-permissions';
 import * as Location from 'expo-location';
+import * as api from './src/apiCalls';
 
 import { App } from './App';
 
@@ -49,10 +50,19 @@ describe('App', () => {
     })
   })
 
-  it.skip('should be able to handle submitNewTaco', async () => {
-    // wrapper.setState({ restaurants: mockStateRestaurants});
-    wrapper = shallow(<App newTaco={mockNewTaco} />);
-    await wrapper.instance().submitNewTaco('carne', 1)
-    expect(mockNewTaco).toHaveBeenCalledWith('carne', 1);
-  })
+  it('submitNewTaco should return the response from BE', async () => {
+    const mockResponse = { 
+      id: 1, 
+      restaurantId: 2, 
+      averageRating: null, 
+      type: 'carne asada', 
+      reviews: [],
+    };
+    api.newTaco = jest.fn().mockImplementation(() => Promise.resolve(mockResponse));
+    const mockUpdateLocalTacos = jest.fn();
+    wrapper.instance().updateLocalTacos = mockUpdateLocalTacos;
+    const result = await wrapper.instance().submitNewTaco('carne asada', 2);
+    expect(mockUpdateLocalTacos).toHaveBeenCalledWith({"restaurant": 2, "type": "carne asada"});
+    expect(result).toEqual(mockResponse);
+  });
 });
