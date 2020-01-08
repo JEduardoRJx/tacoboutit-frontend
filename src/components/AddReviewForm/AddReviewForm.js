@@ -59,18 +59,17 @@ export default class AddReviewForm extends Component {
 
   render() {
     return (
-      <View style={{flex: 2}}>
-        <Text>Add Review</Text>
-        <Text>Type:</Text>
-        <Picker
-          onValueChange={(itemValue, itemIndex) => this.handleTacoTypeChange(itemValue, itemIndex)}>{this.renderTacoTypes()}</Picker>
-        <Text>Rating:</Text>
-        <Picker 
+      <View style={{height: '30%', backgroundColor: 'red', justifyContent: 'space-around'}}>
+        {/* <Text>Add Review</Text> */}
+        {/* <Text>Type:</Text> */}
+        {/* <Picker
+          onValueChange={(itemValue, itemIndex) => this.handleTacoTypeChange(itemValue, itemIndex)}>{this.renderTacoTypes()}</Picker> */}
+        {/* <Text>Rating:</Text> */}
+        {/* <Picker 
         selectedValue={this.state.rating}
         onValueChange={(itemValue) => this.handleRatingChange(itemValue)}
-        >{this.renderRatings()}</Picker>
-        <Text>Review:</Text>
-        <TextInput
+        >{this.renderRatings()}</Picker> */}
+        {/* <TextInput
           multiline={true}
           numberOfLines={4}
           maxLength={50}
@@ -78,9 +77,16 @@ export default class AddReviewForm extends Component {
           onChangeText={(text) => {
             this.setState({review: text})
           }}
-          />
-        <Button onPress={() => this.submitNewReview()} title='Submit' />
+          /> */}
+          {/* <Button title='submit' /> */}
+        {/* <TouchableOpacity onPress={() => this.submitNewReview()} style={styles.buttonStyle}>
+            <Text style={styles.buttonTextStyle}>SUBMIT</Text>
+          </TouchableOpacity> */}
       </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  buttonStyle: {flex: 1, backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center'}
+})
