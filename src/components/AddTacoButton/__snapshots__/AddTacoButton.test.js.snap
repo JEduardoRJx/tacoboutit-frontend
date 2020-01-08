@@ -108,11 +108,6 @@ exports[`AddTacoButton renders correctly 1`] = `
                 "value": "cabeza",
               },
               Object {
-                "label": "Cabeza",
-                "textColor": undefined,
-                "value": "cabeza",
-              },
-              Object {
                 "label": "Carnitas",
                 "textColor": undefined,
                 "value": "carnitas",
