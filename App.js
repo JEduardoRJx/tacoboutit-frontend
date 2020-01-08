@@ -99,6 +99,7 @@ export class App extends Component {
         {/* <TacoSearch /> */}
         {this.state.restaurants && <FlatList data={this.state.restaurants} 
           showsVerticalScrollIndicator={false}
+          keyExtractor={item => item.id.toString()}
           renderItem={({ item }) => <RestaurantCard
           id={item.id}
           name={item.name}
@@ -107,7 +108,6 @@ export class App extends Component {
           distance={item.distance}
           img={item.image_url}
           handlePress={this.handlePress}
-          // key={item => item}
       />} />
       }
         <Modal 
@@ -125,50 +125,6 @@ export class App extends Component {
   }
 }
 
-
-// class Tacos extends Component {
-//   render() {
-//     return (
-//       <View style={styles.container}>
-//         <Text>Taco Screen</Text>
-//       </View>
-//     );
-//   }
-// }
-
-// const TabNavigator = createBottomTabNavigator(
-//   {
-//     Home: {
-//       screen: App,
-//       navigationOptions: {
-//         tabBarIcon: () => (
-//           <Image
-//             source={require("./assets/home.png")}
-//             style={{ width: 40, height: 40 }}
-//           />
-//         )
-//       }
-//     },
-//     Tacos: {
-//       screen: Tacos,
-//       navigationOptions: {
-//         tabBarIcon: () => (
-//           <Image
-//             source={require("./assets/taco.png")}
-//             style={{ width: 40, height: 40 }}
-//           />
-//         )
-//       }
-//     }
-//   },
-//   {
-//     tabBarOptions: {
-//       showLabel: false,
-//       activeBackgroundColor: "rgba(0, 0, 0, .1)"
-//     }
-//   }
-// );
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -179,5 +135,4 @@ const styles = StyleSheet.create({
   }
 });
 
-// export default createAppContainer(TabNavigator);
 export default App;
