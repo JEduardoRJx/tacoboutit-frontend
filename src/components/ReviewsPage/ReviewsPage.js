@@ -41,7 +41,7 @@ export default class ReviewsPages extends Component {
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
         style={styles.container}
       >
-        <View style={{flex: reviewHeight, backgroundColor: 'green'}}>
+        <View style={{flex: reviewHeight}}>
           {/* {this.renderReviewCards()} */}
         </View>
         <KeyboardAvoidingView style={{flex: 1}}
