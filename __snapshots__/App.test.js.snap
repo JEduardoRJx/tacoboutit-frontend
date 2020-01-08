@@ -18,7 +18,35 @@ exports[`App renders correctly 1`] = `
     }
   }
 >
-  <TacoSearch />
+  <FlatList
+    data={
+      Array [
+        Object {
+          "address": "2835 W 72nd Ave, Westminster, CO 80030",
+          "id": 1,
+          "name": "Guadalajara Mexican Restaurant",
+        },
+        Object {
+          "address": "1111 W Taco St, CO 80211",
+          "id": 2,
+          "name": "Taco Taco Taco",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    keyExtractor={[Function]}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    showsVerticalScrollIndicator={false}
+    updateCellsBatchingPeriod={50}
+    windowSize={21}
+  />
   <Component
     animationType="fade"
     hardwareAccelerated={false}
@@ -28,6 +56,7 @@ exports[`App renders correctly 1`] = `
     <RestaurantPage
       restaurant={null}
       submitTaco={[Function]}
+      updateLocalReviews={[Function]}
     />
   </Component>
   <SplashPage

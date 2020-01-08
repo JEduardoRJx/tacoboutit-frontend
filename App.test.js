@@ -21,6 +21,7 @@ describe('App', () => {
 
   beforeEach(() => {
      wrapper = shallow(<App />);
+     wrapper.setState({ restaurants: mockStateRestaurants});
   })
 
   it('renders correctly', () => {
@@ -39,7 +40,6 @@ describe('App', () => {
   });
 
   it('should be able to handlePress', async () => {
-    wrapper.setState({ restaurants: mockStateRestaurants});
     expect(wrapper.state('restaurants').length).toBe(2);
     await wrapper.instance().handlePress(1);
     expect(wrapper.state('selectedRestaurant')).toEqual({

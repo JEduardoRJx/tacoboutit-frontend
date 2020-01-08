@@ -89,4 +89,13 @@ describe('AddReviewForm', () => {
     expect(api.addReview).toHaveBeenCalledWith(9, 1, 'This is a test review');
     expect(mockUpdateLocalReviews).toHaveBeenCalledWith({ ok: true });
   });
+  it('submitTacoReview should set error in state if adding a new review fails', async () => {
+    api.addReview = jest.fn().mockImplementation(() => Promise.resolve({ ok: false }));
+    await wrapper.instance().submitNewReview();
+    expect(wrapper.state('error')).toEqual('Failed to post review');
+    wrapper.setState({ review: 'This is a test review', error: '' });
+    expect(wrapper.state('error')).toEqual('');
+    await wrapper.instance().submitNewReview();
+    expect(wrapper.state('error')).toEqual('Failed to post review');
+  });
 });
