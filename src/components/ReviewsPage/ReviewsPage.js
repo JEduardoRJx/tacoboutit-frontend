@@ -29,7 +29,7 @@ export default class ReviewsPages extends Component {
         </TouchableOpacity>
       )
     } else {
-      return (<Text style={{height: '10%', backgroundColor: 'red', color: 'white'}}>Nothing To Review</Text>)
+      return (<Text style={{color: 'white', fontSize: 32, textAlign: 'center'}}>Nothing To Review</Text>)
     }
   }
   
@@ -56,6 +56,6 @@ const styles = StyleSheet.create({
   container: {height: Dimensions.get('window').height},
   buttonStyle: {height: '10%', backgroundColor: '#00BFFF', width: '100%', justifyContent: 'center', 
   alignItems: 'center', flex: 1},
-  buttonTextStyle: {color: 'white', fontSize: 32}
+  buttonTextStyle: {color: 'white', fontSize: 32},
 
 })
