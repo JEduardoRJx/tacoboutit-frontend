@@ -54,7 +54,20 @@ export default class AddReviewForm extends Component {
         this.setState({error: 'Failed to post review'})
       }
     }
+    this.resetStateCloseModal();
     updateLocalReviews(response)
+  }
+
+  resetStateCloseModal = () => {
+    const initialState = {
+      tacoId: this.props.tacos[0].id,
+      rating: 1,
+      review: '',
+      type: this.props.tacos[0].type, 
+      error: ''
+    };
+    this.setState(initialState);
+    this.props.toggleReviewForm();
   }
 
   render() {
