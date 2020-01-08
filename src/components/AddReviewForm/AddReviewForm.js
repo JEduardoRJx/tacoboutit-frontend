@@ -59,7 +59,7 @@ export default class AddReviewForm extends Component {
 
   render() {
     return (
-      <View style={{height: '30%', backgroundColor: 'red', justifyContent: 'space-around'}}>
+      <View style={{height: '30%', backgroundColor: 'green', justifyContent: 'space-around'}}>
         {/* <Text>Add Review</Text> */}
         {/* <Text>Type:</Text> */}
         {/* <Picker
