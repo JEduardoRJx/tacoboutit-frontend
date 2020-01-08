@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ReviewsPage should match the snapshot 1`] = `
-<ScrollViewMock
+<LinearGradient
+  colors={
+    Array [
+      "#F0CB35",
+      "#D56C2C",
+      "#C02425",
+    ]
+  }
   style={
     Object {
       "height": 1334,
@@ -11,90 +18,109 @@ exports[`ReviewsPage should match the snapshot 1`] = `
   <View
     style={
       Object {
-        "height": 1334,
+        "flex": 9,
       }
     }
   >
-    <ReviewCard
-      key="9"
-      taco={
-        Object {
-          "average_rating": 5,
-          "id": 9,
-          "restaurant_id": 2,
-          "reviews": Array [
-            Object {
-              "id": 1,
-              "rating": 7,
-              "review": "its ok",
-              "taco": 9,
-            },
-            Object {
-              "id": 2,
-              "rating": 4,
-              "review": "lame",
-              "taco": 9,
-            },
-            Object {
-              "id": 3,
-              "rating": 4,
-              "review": null,
-              "taco": 9,
-            },
-            Object {
-              "id": 4,
-              "rating": 1,
-              "review": "This taco put my son in the hospital",
-              "taco": 9,
-            },
-            Object {
-              "id": 5,
-              "rating": 10,
-              "review": "The best",
-              "taco": 9,
-            },
-            Object {
-              "id": 6,
-              "rating": 4,
-              "review": "meh",
-              "taco": 9,
-            },
-          ],
-          "type": "Testing testing",
+    <ScrollViewMock>
+      <ReviewCard
+        key="9"
+        taco={
+          Object {
+            "average_rating": 5,
+            "id": 9,
+            "restaurant_id": 2,
+            "reviews": Array [
+              Object {
+                "id": 1,
+                "rating": 7,
+                "review": "its ok",
+                "taco": 9,
+              },
+              Object {
+                "id": 2,
+                "rating": 4,
+                "review": "lame",
+                "taco": 9,
+              },
+              Object {
+                "id": 3,
+                "rating": 4,
+                "review": null,
+                "taco": 9,
+              },
+              Object {
+                "id": 4,
+                "rating": 1,
+                "review": "This taco put my son in the hospital",
+                "taco": 9,
+              },
+              Object {
+                "id": 5,
+                "rating": 10,
+                "review": "The best",
+                "taco": 9,
+              },
+              Object {
+                "id": 6,
+                "rating": 4,
+                "review": "meh",
+                "taco": 9,
+              },
+            ],
+            "type": "Testing testing",
+          }
         }
+      />
+    </ScrollViewMock>
+  </View>
+  <KeyboardAvoidingView
+    behavior="padding"
+    enabled={true}
+    keyboardVerticalOffset={0}
+    style={
+      Object {
+        "flex": 1,
       }
-    />
+    }
+  >
     <TouchableOpacity
       activeOpacity={0.2}
       onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#00BFFF",
+          "flex": 1,
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
     >
-      <View
+      <Text
         style={
           Object {
-            "backgroundColor": "#00BFFF",
-            "height": 50,
-            "width": "100%",
+            "color": "white",
+            "fontSize": 32,
           }
         }
       >
-        <Text
-          style={
-            Object {
-              "color": "white",
-              "fontSize": 16,
-            }
-          }
-        >
-          + Review
-        </Text>
-      </View>
+        Add Review
+      </Text>
     </TouchableOpacity>
-  </View>
-</ScrollViewMock>
+  </KeyboardAvoidingView>
+</LinearGradient>
 `;
 
 exports[`ReviewsPage should match the snapshot 2`] = `
-<ScrollViewMock
+<LinearGradient
+  colors={
+    Array [
+      "#F0CB35",
+      "#D56C2C",
+      "#C02425",
+    ]
+  }
   style={
     Object {
       "height": 1334,
@@ -104,84 +130,72 @@ exports[`ReviewsPage should match the snapshot 2`] = `
   <View
     style={
       Object {
-        "height": 1334,
+        "flex": 1,
       }
     }
   >
-    <ReviewCard
-      key="9"
-      taco={
-        Object {
-          "average_rating": 5,
-          "id": 9,
-          "restaurant_id": 2,
-          "reviews": Array [
-            Object {
-              "id": 1,
-              "rating": 7,
-              "review": "its ok",
-              "taco": 9,
-            },
-            Object {
-              "id": 2,
-              "rating": 4,
-              "review": "lame",
-              "taco": 9,
-            },
-            Object {
-              "id": 3,
-              "rating": 4,
-              "review": null,
-              "taco": 9,
-            },
-            Object {
-              "id": 4,
-              "rating": 1,
-              "review": "This taco put my son in the hospital",
-              "taco": 9,
-            },
-            Object {
-              "id": 5,
-              "rating": 10,
-              "review": "The best",
-              "taco": 9,
-            },
-            Object {
-              "id": 6,
-              "rating": 4,
-              "review": "meh",
-              "taco": 9,
-            },
-          ],
-          "type": "Testing testing",
-        }
-      }
-    />
-    <TouchableOpacity
-      activeOpacity={0.2}
-      onPress={[Function]}
-    >
-      <View
-        style={
+    <ScrollViewMock>
+      <ReviewCard
+        key="9"
+        taco={
           Object {
-            "backgroundColor": "#00BFFF",
-            "height": 50,
-            "width": "100%",
+            "average_rating": 5,
+            "id": 9,
+            "restaurant_id": 2,
+            "reviews": Array [
+              Object {
+                "id": 1,
+                "rating": 7,
+                "review": "its ok",
+                "taco": 9,
+              },
+              Object {
+                "id": 2,
+                "rating": 4,
+                "review": "lame",
+                "taco": 9,
+              },
+              Object {
+                "id": 3,
+                "rating": 4,
+                "review": null,
+                "taco": 9,
+              },
+              Object {
+                "id": 4,
+                "rating": 1,
+                "review": "This taco put my son in the hospital",
+                "taco": 9,
+              },
+              Object {
+                "id": 5,
+                "rating": 10,
+                "review": "The best",
+                "taco": 9,
+              },
+              Object {
+                "id": 6,
+                "rating": 4,
+                "review": "meh",
+                "taco": 9,
+              },
+            ],
+            "type": "Testing testing",
           }
         }
-      >
-        <Text
-          style={
-            Object {
-              "color": "white",
-              "fontSize": 16,
-            }
-          }
-        >
-          Cancel
-        </Text>
-      </View>
-    </TouchableOpacity>
+      />
+    </ScrollViewMock>
+  </View>
+  <KeyboardAvoidingView
+    behavior="padding"
+    enabled={true}
+    keyboardVerticalOffset={0}
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
     <AddReviewForm
       tacos={
         Array [
@@ -231,7 +245,32 @@ exports[`ReviewsPage should match the snapshot 2`] = `
           },
         ]
       }
+      toggleReviewForm={[Function]}
     />
-  </View>
-</ScrollViewMock>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      onPress={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#00BFFF",
+          "flex": 1,
+          "justifyContent": "center",
+          "width": "100%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 32,
+          }
+        }
+      >
+        Cancel
+      </Text>
+    </TouchableOpacity>
+  </KeyboardAvoidingView>
+</LinearGradient>
 `;

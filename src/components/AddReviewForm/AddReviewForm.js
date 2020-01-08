@@ -59,7 +59,6 @@ export default class AddReviewForm extends Component {
 
   render() {
     const { toggleReviewForm } = this.props;
-    console.log(this.props)
     return (
       <View style={{flex: 4, backgroundColor: '#DCDCDC', justifyContent: 'space-around'}}>
         <View style={{flex: 1.25, flexDirection: 'row'}}>
@@ -82,7 +81,6 @@ export default class AddReviewForm extends Component {
             </Picker>
           </View>
         </View>
-
         <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 20}}>
               <TextInput
               style={{ fontSize: 16}}
@@ -95,7 +93,6 @@ export default class AddReviewForm extends Component {
           }}
           />
         </View>
-
         <View style={styles.buttonsContainer}>
           <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
             <TouchableOpacity style={styles.buttonStyle} onPress={() => this.submitNewReview()}>
@@ -103,7 +100,6 @@ export default class AddReviewForm extends Component {
             </TouchableOpacity>
           </View>
         </View>
-
       </View>
     )
   }

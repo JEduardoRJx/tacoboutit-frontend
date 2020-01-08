@@ -468,167 +468,190 @@ exports[`RestaurantPage renders correctly 1`] = `
             onRequestClose={[Function]}
             visible={false}
           >
-            <RCTScrollView
+            <ViewManagerAdapter_ExpoLinearGradient
+              proxiedProperties={
+                Object {
+                  "colors": Array [
+                    4293970741,
+                    4292176940,
+                    4290782245,
+                  ],
+                  "endPoint": undefined,
+                  "locations": undefined,
+                  "startPoint": undefined,
+                }
+              }
               style={
                 Object {
                   "height": 1334,
                 }
               }
             >
-              <View>
+              <View
+                style={
+                  Object {
+                    "flex": 9,
+                  }
+                }
+              >
+                <RCTScrollView>
+                  <View>
+                    <View>
+                      <Text>
+                        Type: 
+                        al pastor
+                      </Text>
+                      <Text>
+                        Average Rating: 
+                        5
+                        /10
+                      </Text>
+                      <View>
+                        <Text>
+                          Rating: 
+                          4
+                          /10
+                        </Text>
+                        <Text>
+                          Great spot
+                        </Text>
+                      </View>
+                    </View>
+                    <View>
+                      <Text>
+                        Type: 
+                        carne asada
+                      </Text>
+                      <Text>
+                        Average Rating: 
+                        5
+                        /10
+                      </Text>
+                      <View>
+                        <Text>
+                          Rating: 
+                          4
+                          /10
+                        </Text>
+                        <Text>
+                          Great spot
+                        </Text>
+                      </View>
+                    </View>
+                    <View>
+                      <Text>
+                        Type: 
+                        cabeza
+                      </Text>
+                      <Text>
+                        Average Rating: 
+                        5
+                        /10
+                      </Text>
+                      <View>
+                        <Text>
+                          Rating: 
+                          4
+                          /10
+                        </Text>
+                        <Text>
+                          Great spot
+                        </Text>
+                      </View>
+                    </View>
+                    <View>
+                      <Text>
+                        Type: 
+                        testing
+                      </Text>
+                      <Text>
+                        Average Rating: 
+                        5
+                        /10
+                      </Text>
+                      <View>
+                        <Text>
+                          Rating: 
+                          4
+                          /10
+                        </Text>
+                        <Text>
+                          Great spot
+                        </Text>
+                      </View>
+                    </View>
+                    <View>
+                      <Text>
+                        Type: 
+                        carnitas
+                      </Text>
+                      <Text>
+                        Average Rating: 
+                        5
+                        /10
+                      </Text>
+                      <View>
+                        <Text>
+                          Rating: 
+                          4
+                          /10
+                        </Text>
+                        <Text>
+                          Great spot
+                        </Text>
+                      </View>
+                    </View>
+                  </View>
+                </RCTScrollView>
+              </View>
+              <View
+                onLayout={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "flex": 1,
+                    },
+                    Object {
+                      "paddingBottom": 0,
+                    },
+                  ]
+                }
+              >
                 <View
+                  accessible={true}
+                  focusable={true}
+                  isTVSelectable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "height": 1334,
+                      "alignItems": "center",
+                      "backgroundColor": "#00BFFF",
+                      "flex": 1,
+                      "justifyContent": "center",
+                      "opacity": 1,
+                      "width": "100%",
                     }
                   }
                 >
-                  <View>
-                    <Text>
-                      Type: 
-                      al pastor
-                    </Text>
-                    <Text>
-                      Average Rating: 
-                      5
-                      /10
-                    </Text>
-                    <View>
-                      <Text>
-                        Rating: 
-                        4
-                        /10
-                      </Text>
-                      <Text>
-                        Great spot
-                      </Text>
-                    </View>
-                  </View>
-                  <View>
-                    <Text>
-                      Type: 
-                      carne asada
-                    </Text>
-                    <Text>
-                      Average Rating: 
-                      5
-                      /10
-                    </Text>
-                    <View>
-                      <Text>
-                        Rating: 
-                        4
-                        /10
-                      </Text>
-                      <Text>
-                        Great spot
-                      </Text>
-                    </View>
-                  </View>
-                  <View>
-                    <Text>
-                      Type: 
-                      cabeza
-                    </Text>
-                    <Text>
-                      Average Rating: 
-                      5
-                      /10
-                    </Text>
-                    <View>
-                      <Text>
-                        Rating: 
-                        4
-                        /10
-                      </Text>
-                      <Text>
-                        Great spot
-                      </Text>
-                    </View>
-                  </View>
-                  <View>
-                    <Text>
-                      Type: 
-                      testing
-                    </Text>
-                    <Text>
-                      Average Rating: 
-                      5
-                      /10
-                    </Text>
-                    <View>
-                      <Text>
-                        Rating: 
-                        4
-                        /10
-                      </Text>
-                      <Text>
-                        Great spot
-                      </Text>
-                    </View>
-                  </View>
-                  <View>
-                    <Text>
-                      Type: 
-                      carnitas
-                    </Text>
-                    <Text>
-                      Average Rating: 
-                      5
-                      /10
-                    </Text>
-                    <View>
-                      <Text>
-                        Rating: 
-                        4
-                        /10
-                      </Text>
-                      <Text>
-                        Great spot
-                      </Text>
-                    </View>
-                  </View>
-                  <View
-                    accessible={true}
-                    focusable={true}
-                    isTVSelectable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
+                  <Text
                     style={
                       Object {
-                        "opacity": 1,
+                        "color": "white",
+                        "fontSize": 32,
                       }
                     }
                   >
-                    <View
-                      style={
-                        Object {
-                          "backgroundColor": "#00BFFF",
-                          "height": 50,
-                          "width": "100%",
-                        }
-                      }
-                    >
-                      <Text
-                        style={
-                          Object {
-                            "color": "white",
-                            "fontSize": 16,
-                          }
-                        }
-                      >
-                        + Review
-                      </Text>
-                    </View>
-                  </View>
+                    Add Review
+                  </Text>
                 </View>
               </View>
-            </RCTScrollView>
+            </ViewManagerAdapter_ExpoLinearGradient>
           </Modal>
           <Text>
             View All Reviews

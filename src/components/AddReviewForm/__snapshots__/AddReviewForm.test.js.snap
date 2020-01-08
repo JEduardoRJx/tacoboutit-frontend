@@ -4,146 +4,278 @@ exports[`AddReviewForm should match the snapshot 1`] = `
 <View
   style={
     Object {
-      "flex": 2,
+      "backgroundColor": "#DCDCDC",
+      "flex": 4,
+      "justifyContent": "space-around",
     }
   }
 >
-  <Text>
-    Add Review
-  </Text>
-  <Text>
-    Type:
-  </Text>
-  <Picker
-    mode="dialog"
-    onValueChange={[Function]}
+  <View
+    style={
+      Object {
+        "flex": 1.25,
+        "flexDirection": "row",
+      }
+    }
   >
-    <PickerItem
-      key="9"
-      label="Testing testing"
-      value="testing testing"
-    />
-  </Picker>
-  <Text>
-    Rating:
-  </Text>
-  <Picker
-    mode="dialog"
-    onValueChange={[Function]}
-    selectedValue={1}
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }
+      >
+        Select Taco Type
+      </Text>
+      <Picker
+        mode="dialog"
+        onValueChange={[Function]}
+        selectedValue="Testing testing"
+      >
+        <PickerItem
+          key="9"
+          label="Testing testing"
+          value="testing testing"
+        />
+      </Picker>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "fontSize": 16,
+            "textAlign": "center",
+          }
+        }
+      >
+        Select Rating
+      </Text>
+      <Picker
+        mode="dialog"
+        onValueChange={[Function]}
+        selectedValue={1}
+      >
+        <PickerItem
+          key="1"
+          label="1"
+          value={1}
+        />
+        <PickerItem
+          key="1"
+          label="1.5"
+          value={1.5}
+        />
+        <PickerItem
+          key="2"
+          label="2"
+          value={2}
+        />
+        <PickerItem
+          key="2"
+          label="2.5"
+          value={2.5}
+        />
+        <PickerItem
+          key="3"
+          label="3"
+          value={3}
+        />
+        <PickerItem
+          key="3"
+          label="3.5"
+          value={3.5}
+        />
+        <PickerItem
+          key="4"
+          label="4"
+          value={4}
+        />
+        <PickerItem
+          key="4"
+          label="4.5"
+          value={4.5}
+        />
+        <PickerItem
+          key="5"
+          label="5"
+          value={5}
+        />
+        <PickerItem
+          key="5"
+          label="5.5"
+          value={5.5}
+        />
+        <PickerItem
+          key="6"
+          label="6"
+          value={6}
+        />
+        <PickerItem
+          key="6"
+          label="6.5"
+          value={6.5}
+        />
+        <PickerItem
+          key="7"
+          label="7"
+          value={7}
+        />
+        <PickerItem
+          key="7"
+          label="7.5"
+          value={7.5}
+        />
+        <PickerItem
+          key="8"
+          label="8"
+          value={8}
+        />
+        <PickerItem
+          key="8"
+          label="8.5"
+          value={8.5}
+        />
+        <PickerItem
+          key="9"
+          label="9"
+          value={9}
+        />
+        <PickerItem
+          key="9"
+          label="9.5"
+          value={9.5}
+        />
+        <PickerItem
+          key="10"
+          label="10"
+          value={10}
+        />
+      </Picker>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "white",
+        "flex": 1,
+        "paddingHorizontal": 20,
+      }
+    }
   >
-    <PickerItem
-      key="1"
-      label="1"
-      value={1}
+    <TextInput
+      allowFontScaling={true}
+      maxLength={50}
+      multiline={true}
+      numberOfLines={4}
+      onChangeText={[Function]}
+      placeholder="Add A Review"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "fontSize": 16,
+        }
+      }
+      underlineColorAndroid="transparent"
     />
-    <PickerItem
-      key="1"
-      label="1.5"
-      value={1.5}
-    />
-    <PickerItem
-      key="2"
-      label="2"
-      value={2}
-    />
-    <PickerItem
-      key="2"
-      label="2.5"
-      value={2.5}
-    />
-    <PickerItem
-      key="3"
-      label="3"
-      value={3}
-    />
-    <PickerItem
-      key="3"
-      label="3.5"
-      value={3.5}
-    />
-    <PickerItem
-      key="4"
-      label="4"
-      value={4}
-    />
-    <PickerItem
-      key="4"
-      label="4.5"
-      value={4.5}
-    />
-    <PickerItem
-      key="5"
-      label="5"
-      value={5}
-    />
-    <PickerItem
-      key="5"
-      label="5.5"
-      value={5.5}
-    />
-    <PickerItem
-      key="6"
-      label="6"
-      value={6}
-    />
-    <PickerItem
-      key="6"
-      label="6.5"
-      value={6.5}
-    />
-    <PickerItem
-      key="7"
-      label="7"
-      value={7}
-    />
-    <PickerItem
-      key="7"
-      label="7.5"
-      value={7.5}
-    />
-    <PickerItem
-      key="8"
-      label="8"
-      value={8}
-    />
-    <PickerItem
-      key="8"
-      label="8.5"
-      value={8.5}
-    />
-    <PickerItem
-      key="9"
-      label="9"
-      value={9}
-    />
-    <PickerItem
-      key="9"
-      label="9.5"
-      value={9.5}
-    />
-    <PickerItem
-      key="10"
-      label="10"
-      value={10}
-    />
-  </Picker>
-  <Text>
-    Review:
-  </Text>
-  <TextInput
-    allowFontScaling={true}
-    maxLength={50}
-    multiline={true}
-    numberOfLines={4}
-    onChangeText={[Function]}
-    placeholder="Add A Review"
-    rejectResponderTermination={true}
-    underlineColorAndroid="transparent"
-  />
-  <Button
-    onPress={[Function]}
-    title="Submit"
-  />
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#DCDCDC",
+        "flex": 1,
+        "flexDirection": "row",
+        "justifyContent": "space-around",
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "alignContent": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 50,
+            "height": "80%",
+            "justifyContent": "center",
+            "width": "90%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 20,
+              "textAlign": "center",
+            }
+          }
+        >
+          Cancel
+        </Text>
+      </TouchableOpacity>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "justifyContent": "center",
+        }
+      }
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        onPress={[Function]}
+        style={
+          Object {
+            "alignContent": "center",
+            "backgroundColor": "#00BFFF",
+            "borderRadius": 50,
+            "height": "80%",
+            "justifyContent": "center",
+            "width": "90%",
+          }
+        }
+      >
+        <Text
+          style={
+            Object {
+              "color": "white",
+              "fontSize": 20,
+              "textAlign": "center",
+            }
+          }
+        >
+          Submit
+        </Text>
+      </TouchableOpacity>
+    </View>
+  </View>
 </View>
 `;
