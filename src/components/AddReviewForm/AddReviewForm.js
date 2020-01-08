@@ -83,7 +83,15 @@ export default class AddReviewForm extends Component {
           
         </View>
         <View style={{backgroundColor: 'gray', flex: 1.75}}>
-
+              <TextInput
+          multiline={true}
+          numberOfLines={4}
+          maxLength={50}
+          placeholder='Add A Review'
+          onChangeText={(text) => {
+            this.setState({review: text})
+          }}
+          />
         </View>
 
         <View style={{backgroundColor: 'purple', flex: 1}}>
