@@ -60,7 +60,7 @@ export default class AddReviewForm extends Component {
   render() {
     return (
       <View style={{flex: 4, backgroundColor: '#DCDCDC', justifyContent: 'space-around'}}>
-        <View style={{flex: 1, flexDirection: 'row'}}>
+        <View style={{flex: 1.25, flexDirection: 'row'}}>
           <View style={{flex: 1, justifyContent: 'center'}}>
             <Text style={{textAlign: 'center', fontSize: 16}}>Select Taco Type</Text>
             <Picker selectedValue={this.state.type}
@@ -82,9 +82,9 @@ export default class AddReviewForm extends Component {
           </View>
           
         </View>
-        <View style={{backgroundColor: 'white', flex: 1.25, paddingHorizontal: 20}}>
+        <View style={{backgroundColor: 'white', flex: 1, paddingHorizontal: 20}}>
               <TextInput
-              style={{ fontSize: 16, color: 'white'}}
+              style={{ fontSize: 16}}
           multiline={true}
           numberOfLines={4}
           maxLength={50}
