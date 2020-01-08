@@ -112,6 +112,18 @@ describe('addReview', () => {
     await addReview(1, 10, 'Test Review');
     expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
   });
+  it('should be called with the correct body if review is not supplied', async () => {
+    const expectedUrl = 'https://tacoboutit-test.herokuapp.com/api/v1/reviews/';
+    const expectedBody = {
+      "body": "{\"taco\":2,\"rating\":5.5,\"review\":\"No Review Available\"}",
+      "headers": {
+        "content-type": "application/json",
+      },
+      "method": "POST",
+    };
+    await addReview(2, 5.5);
+    expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
+  });
   it('should return a review object if the response is successful', async () => {
     const response = await addReview(1, 10, 'Test Review');
     expect(response).toEqual(mockResponse);

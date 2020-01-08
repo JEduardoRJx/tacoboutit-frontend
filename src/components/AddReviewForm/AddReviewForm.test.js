@@ -1,6 +1,7 @@
 import React from 'react';
 import AddReviewForm from './AddReviewForm';
 import { shallow } from 'enzyme';
+import * as api from '../../apiCalls';
 
 describe('AddReviewForm', () => {
   const mockTacos = [
@@ -50,9 +51,9 @@ describe('AddReviewForm', () => {
     }
 ];
   let wrapper;
-
+  const mockUpdateLocalReviews = jest.fn();
   beforeEach(() => {
-    wrapper = shallow(<AddReviewForm tacos={mockTacos} />);
+    wrapper = shallow(<AddReviewForm tacos={mockTacos} updateLocalReviews={mockUpdateLocalReviews}/>);
   })
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -65,10 +66,36 @@ describe('AddReviewForm', () => {
   });
 
   it('handleTacoTypeChange should update props tacoId and type in state', () => {
-    const initialExpectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "Testing testing"};
+    const initialExpectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "Testing testing", error: "" };
     expect(wrapper.state()).toEqual(initialExpectedState);
-    const expectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "new type"};
+    const expectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "new type", error: "" };
     wrapper.instance().handleTacoTypeChange('new type', 0);
     expect(wrapper.state()).toEqual(expectedState);
+  });
+  it('submitTacoReview should post new review to the backend and update local reviews when review is missing', async () => {
+    api.addReview = jest.fn().mockImplementation(() => {
+      return Promise.resolve({ ok: true });
+    });
+    await wrapper.instance().submitNewReview();
+    expect(api.addReview).toHaveBeenCalledWith(9, 1);
+    expect(mockUpdateLocalReviews).toHaveBeenCalledWith({ ok: true });
+  });
+  it('submitTacoReview should post new review to the backend and update local reviews when review is present', async () => {
+    api.addReview = jest.fn().mockImplementation(() => {
+      return Promise.resolve({ ok: true });
+    });
+    wrapper.setState({ review: 'This is a test review' });
+    await wrapper.instance().submitNewReview();
+    expect(api.addReview).toHaveBeenCalledWith(9, 1, 'This is a test review');
+    expect(mockUpdateLocalReviews).toHaveBeenCalledWith({ ok: true });
+  });
+  it('submitTacoReview should set error in state if adding a new review fails', async () => {
+    api.addReview = jest.fn().mockImplementation(() => Promise.resolve({ ok: false }));
+    await wrapper.instance().submitNewReview();
+    expect(wrapper.state('error')).toEqual('Failed to post review');
+    wrapper.setState({ review: 'This is a test review', error: '' });
+    expect(wrapper.state('error')).toEqual('');
+    await wrapper.instance().submitNewReview();
+    expect(wrapper.state('error')).toEqual('Failed to post review');
   });
 });

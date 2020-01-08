@@ -137,10 +137,12 @@ exports[`AddReviewForm should match the snapshot 1`] = `
     multiline={true}
     numberOfLines={4}
     onChangeText={[Function]}
+    placeholder="Add A Review"
     rejectResponderTermination={true}
     underlineColorAndroid="transparent"
   />
   <Button
+    onPress={[Function]}
     title="Submit"
   />
 </View>
