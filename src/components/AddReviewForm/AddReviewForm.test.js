@@ -65,9 +65,9 @@ describe('AddReviewForm', () => {
   });
 
   it('handleTacoTypeChange should update props tacoId and type in state', () => {
-    const initialExpectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "Testing testing"};
+    const initialExpectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "Testing testing", error: "" };
     expect(wrapper.state()).toEqual(initialExpectedState);
-    const expectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "new type"};
+    const expectedState = {"rating": 1, "review": "", "tacoId": 9, "type": "new type", error: "" };
     wrapper.instance().handleTacoTypeChange('new type', 0);
     expect(wrapper.state()).toEqual(expectedState);
   });
