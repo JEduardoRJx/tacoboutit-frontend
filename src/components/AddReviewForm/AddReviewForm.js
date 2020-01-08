@@ -59,7 +59,6 @@ export default class AddReviewForm extends Component {
 
   render() {
     const { toggleReviewForm } = this.props;
-    console.log(this.props)
     return (
       <View style={{flex: 4, backgroundColor: '#DCDCDC', justifyContent: 'space-around'}}>
         <View style={{flex: 1.25, flexDirection: 'row'}}>
