@@ -16,20 +16,20 @@ export default class ReviewsPages extends Component {
   }
 
   toggleReviewForm = () => {
-    this.setState({toggleForm: !this.state.toggleForm, reviewHeight: !this.state.reviewHeight})
+    this.setState({toggleForm: !this.state.toggleForm})
   }
 
-  // toggleAddReviewButton = (tacos) => {
-  //   if(tacos.length) {
-  //     return (
-  //       <TouchableOpacity onPress={() => this.toggleReviewForm ()} style={styles.buttonStyle}>
-  //         {this.state.toggleForm ? <Text style={styles.buttonTextStyle}>Cancel</Text> : <Text style={styles.buttonTextStyle}>Add Review</Text>}
-  //       </TouchableOpacity>
-  //     )
-  //   } else {
-  //     return (<Text style={{height: '10%', backgroundColor: 'red'}}>Nothing To Review</Text>)
-  //   }
-  // }
+  toggleAddReviewButton = (tacos) => {
+    if(tacos.length) {
+      return (
+        <TouchableOpacity onPress={() => this.toggleReviewForm ()} style={styles.buttonStyle}>
+          {this.state.toggleForm ? <Text style={styles.buttonTextStyle}>Cancel</Text> : <Text style={styles.buttonTextStyle}>Add Review</Text>}
+        </TouchableOpacity>
+      )
+    } else {
+      return (<Text style={{height: '10%', backgroundColor: 'red'}}>Nothing To Review</Text>)
+    }
+  }
   
   render() {
     const { tacos, updateLocalReviews } = this.props;
@@ -40,7 +40,7 @@ export default class ReviewsPages extends Component {
           {this.renderReviewCards()}
         </View>
         {(this.state.toggleForm && tacos.length > 0) && <AddReviewForm tacos={tacos} updateLocalReviews={updateLocalReviews} />}
-        {/* {this.toggleAddReviewButton(tacos)} */}
+        {this.toggleAddReviewButton(tacos)}
       </View>
     )
   }
