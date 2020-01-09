@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button, KeyboardAvoidingView } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, TouchableOpacity, ScrollView, KeyboardAvoidingView } from 'react-native';
 import ReviewCard from '../ReviewCard/ReviewCard';
 import AddReviewForm from '../AddReviewForm/AddReviewForm';
 import { LinearGradient } from "expo-linear-gradient";
-
 
 export default class ReviewsPages extends Component {
   state = {
@@ -57,7 +56,6 @@ export default class ReviewsPages extends Component {
     )
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {height: Dimensions.get('window').height},
