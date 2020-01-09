@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, TouchableOpacity, Modal, TextInput, Button, Picker, Dimensions } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, Modal, Picker, Dimensions } from 'react-native'
 
 export default class AddTacoButton extends Component {
   state = { 
@@ -97,5 +97,3 @@ const styles = StyleSheet.create({
     borderRadius: 30
   }
 })
-
-
