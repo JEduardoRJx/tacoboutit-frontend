@@ -64,7 +64,6 @@ export default class AddReviewForm extends Component {
       rating: 1,
       review: '',
       type: this.props.tacos[0].type, 
-      error: ''
     };
     this.setState(initialState);
     this.props.toggleReviewForm();
