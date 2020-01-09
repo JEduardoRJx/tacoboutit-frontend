@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Image, Button, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
-import { Card, CardItem } from 'native-base';
+import { Text, View, Image, StyleSheet, Dimensions, TouchableOpacity } from 'react-native';
 
 export default class RestaurantCard extends Component {
   metersToMiles = (meters) => {

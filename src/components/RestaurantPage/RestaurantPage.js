@@ -3,10 +3,8 @@ import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, S
 import { LinearGradient } from "expo-linear-gradient";
 import TacoCard from '../TacoCard/TacoCard';
 import AddTacoButton from '../AddTacoButton/AddTacoButton';
-import { newTaco } from '../../apiCalls';
 import ReviewsPage from '../ReviewsPage/ReviewsPage'
 const callIcon = require('../../../assets/call-answer.png');
-
 
 export default class RestaurantPage extends Component { 
   state = {

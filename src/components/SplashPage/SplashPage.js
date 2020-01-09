@@ -3,7 +3,6 @@ import { Text, View, ActivityIndicator, Dimensions, StyleSheet } from 'react-nat
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
 
-
 export default class SplashPage extends Component {
   state = {
     search: '',
