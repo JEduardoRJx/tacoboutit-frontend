@@ -11,7 +11,7 @@ describe('getRestaurants', () => {
     });
   })
   it('should be called with the correct url', () => {
-    const expected = 'https://tacoboutit-test.herokuapp.com/api/v1/restaurants/retrieve/?lat=39.7392&lng=-104.9903';
+    const expected = 'https://tacoboutit-backend.herokuapp.com/api/v1/restaurants/retrieve/?lat=39.7392&lng=-104.9903';
     getRestaurants();
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
@@ -58,7 +58,7 @@ describe('newTaco', () => {
       },
       "method": "POST",
     };
-    const expectedUrl = 'https://tacoboutit-test.herokuapp.com/api/v1/tacos/new/';
+    const expectedUrl = 'https://tacoboutit-backend.herokuapp.com/api/v1/tacos/new/';
     await newTaco('carne asada', 1);
     expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
   });
@@ -108,12 +108,12 @@ describe('addReview', () => {
       },
       "method": "POST",
     };
-    const expectedUrl = 'https://tacoboutit-test.herokuapp.com/api/v1/reviews/';
+    const expectedUrl = 'https://tacoboutit-backend.herokuapp.com/api/v1/reviews/';
     await addReview(1, 10, 'Test Review');
     expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
   });
   it('should be called with the correct body if review is not supplied', async () => {
-    const expectedUrl = 'https://tacoboutit-test.herokuapp.com/api/v1/reviews/';
+    const expectedUrl = 'https://tacoboutit-backend.herokuapp.com/api/v1/reviews/';
     const expectedBody = {
       "body": "{\"taco\":2,\"rating\":5.5,\"review\":\"No Review Available\"}",
       "headers": {
