@@ -1,9 +1,5 @@
 # TacoBoutIt
 Craving some Tacos? Find the best tacos near you! 
-// More info here
-
-### Deployed At
-// Deployment link here
 
 ### Getting Started
 
@@ -56,7 +52,12 @@ npm install
 * [Alec Wells](https://github.com/alect47)
 
 ### Screenshots
-// screenshots here
+![splash](https://user-images.githubusercontent.com/25031031/72036444-150e7000-3258-11ea-8c25-30b47de08842.png)
+![restaurants](https://user-images.githubusercontent.com/25031031/72036464-2bb4c700-3258-11ea-9dca-7568b8e6b944.png)
+![restaurant-page](https://user-images.githubusercontent.com/25031031/72036530-530b9400-3258-11ea-980a-2d6c09385abe.png)
+![add-taco](https://user-images.githubusercontent.com/25031031/72036551-61f24680-3258-11ea-8915-ffa8203e06af.png)
+![add-taco](https://user-images.githubusercontent.com/25031031/72036551-61f24680-3258-11ea-8915-ffa8203e06af.png)
+![review](https://user-images.githubusercontent.com/25031031/72036566-6b7bae80-3258-11ea-9461-2a491f9a1635.png)
 
 ### BackEnd and FrontEnd Communication
 
