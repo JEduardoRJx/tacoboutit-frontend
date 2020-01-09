@@ -1,20 +1,12 @@
 import React, { Component } from "react";
 import {
   StyleSheet,
-  Text,
-  View,
   FlatList,
-  SafeAreaView,
-  Image,
   Modal,
   StatusBar,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { mockRestaurants } from "./mockRestaurants";
-import { createAppContainer } from "react-navigation";
-import { createBottomTabNavigator } from "react-navigation-tabs";
 import RestaurantCard from './src/components/RestaurantCard/RestaurantCard';
-import TacoSearch from './src/components/TacoSearch/TacoSearch';
 import SplashPage from './src/components/SplashPage/SplashPage';
 import { getRestaurants, newTaco } from './src/apiCalls';
 import * as Location from 'expo-location';
@@ -95,7 +87,6 @@ export class App extends Component {
         colors={["#F0CB35", "#D56C2C", "#C02425"]}
         style={styles.container}
       >
-        {/* <TacoSearch /> */}
         {this.state.restaurants && <FlatList data={this.state.restaurants} 
           showsVerticalScrollIndicator={false}
           keyExtractor={item => item.id.toString()}

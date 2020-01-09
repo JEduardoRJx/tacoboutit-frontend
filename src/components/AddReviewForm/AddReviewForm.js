@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Image, StyleSheet, Dimensions, Linking, TouchableOpacity, ScrollView, Modal, Button, Picker, TextInput } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Picker, TextInput } from 'react-native';
 import { addReview } from '../../apiCalls'
 
 export default class AddReviewForm extends Component {
@@ -70,7 +70,6 @@ export default class AddReviewForm extends Component {
   }
 
   render() {
-    const { toggleReviewForm } = this.props;
     return (
       <View style={{flex: 4, backgroundColor: '#DCDCDC', justifyContent: 'space-around'}}>
         <View style={{flex: 1.25, flexDirection: 'row'}}>
