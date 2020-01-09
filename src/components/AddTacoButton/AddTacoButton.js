@@ -11,6 +11,7 @@ export default class AddTacoButton extends Component {
     const { submitTaco, id } = this.props;
     const selectedType = this.state.selectedType;
     const result = await submitTaco(selectedType, id);
+    console.log(result);
     this.setState({ showAddTaco: false });
   }
 
