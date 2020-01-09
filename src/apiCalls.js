@@ -1,5 +1,5 @@
 export const getRestaurants = async (lat = 39.7392, lng = -104.9903) => {
-  const response = await fetch(`https://tacoboutit-test.herokuapp.com/api/v1/restaurants/retrieve/?lat=${lat}&lng=${lng}`);
+  const response = await fetch(`https://tacoboutit-backend.herokuapp.com/api/v1/restaurants/retrieve/?lat=${lat}&lng=${lng}`);
   if(!response.ok) {
     throw Error('Failed to fetch restaurants near you');
   }
@@ -7,7 +7,7 @@ export const getRestaurants = async (lat = 39.7392, lng = -104.9903) => {
 }
 
 export const newTaco = async (type, restaurant) => {
-  const response = await fetch('https://tacoboutit-test.herokuapp.com/api/v1/tacos/new/', {
+  const response = await fetch('https://tacoboutit-backend.herokuapp.com/api/v1/tacos/new/', {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({ type, restaurant }),
@@ -20,7 +20,7 @@ export const newTaco = async (type, restaurant) => {
 }
 
 export const addReview = async (tacoId, rating, review = 'No Review Available') => {
-  const response = await fetch(`https://tacoboutit-test.herokuapp.com/api/v1/reviews/`, {
+  const response = await fetch(`https://tacoboutit-backend.herokuapp.com/api/v1/reviews/`, {
     method: 'POST', 
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
