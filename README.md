@@ -51,7 +51,8 @@ npm install
 * [Scott Payton](https://github.com/scottzero)
 * [Alec Wells](https://github.com/alect47)
 
-### Screenshots
+### Screenshots / Gif
+![Gif](https://user-images.githubusercontent.com/33855435/72092687-10859e00-32d0-11ea-874a-d316b0ffcffb.gif)
 ![splash](https://user-images.githubusercontent.com/25031031/72036444-150e7000-3258-11ea-8c25-30b47de08842.png)
 ![restaurants](https://user-images.githubusercontent.com/25031031/72036464-2bb4c700-3258-11ea-9dca-7568b8e6b944.png)
 ![restaurant-page](https://user-images.githubusercontent.com/25031031/72036530-530b9400-3258-11ea-980a-2d6c09385abe.png)
