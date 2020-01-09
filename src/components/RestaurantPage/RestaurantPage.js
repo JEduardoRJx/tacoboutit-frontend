@@ -54,7 +54,9 @@ export default class RestaurantPage extends Component {
                   onRequestClose={() => this.setState({showReviews: false})}>
                   <ReviewsPage tacos={tacos} updateLocalReviews={updateLocalReviews} />
                 </Modal>
-                <Text>View All Reviews</Text>
+                <View style={{justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+                  <Text style={styles.viewAllReviewsStyles}>View All Reviews</Text>
+                </View>
               </TouchableOpacity>
           </View>
         </ScrollView>
@@ -105,5 +107,15 @@ const styles = StyleSheet.create({
     borderRadius: 25,
     alignSelf: 'center',
     marginVertical: 5,
+  },
+  viewAllReviewsStyles: {
+    backgroundColor: '#00BFFF',
+    color: 'white',
+    height: 50,
+    width: '70%',
+    borderRadius: 30, 
+    textAlign: 'center',
+    fontSize: 24,
+    textAlignVertical: 'center'
   }
 })

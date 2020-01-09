@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import * as api from '../../apiCalls';
 
 describe('AddReviewForm', () => {
+  const mockToggleReviewForm = jest.fn();
   const mockTacos = [
     {
         "id": 9,
@@ -53,7 +54,11 @@ describe('AddReviewForm', () => {
   let wrapper;
   const mockUpdateLocalReviews = jest.fn();
   beforeEach(() => {
-    wrapper = shallow(<AddReviewForm tacos={mockTacos} updateLocalReviews={mockUpdateLocalReviews}/>);
+    wrapper = shallow(<AddReviewForm 
+      tacos={mockTacos} 
+      updateLocalReviews={mockUpdateLocalReviews}
+      toggleReviewForm={mockToggleReviewForm}
+    />);
   })
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();

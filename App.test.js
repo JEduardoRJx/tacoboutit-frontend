@@ -119,7 +119,7 @@ describe('App', () => {
     const mockUpdateLocalTacos = jest.fn();
     wrapper.instance().updateLocalTacos = mockUpdateLocalTacos;
     const result = await wrapper.instance().submitNewTaco('carne asada', 2);
-    expect(mockUpdateLocalTacos).toHaveBeenCalledWith({"restaurant": 2, "type": "carne asada"});
+    expect(mockUpdateLocalTacos).toHaveBeenCalledWith(mockResponse);
     expect(result).toEqual(mockResponse);
   });
 

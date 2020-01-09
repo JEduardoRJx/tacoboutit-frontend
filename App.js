@@ -67,8 +67,7 @@ export class App extends Component {
   submitNewTaco = async (type, restaurantId) => {
     const response = await newTaco(type, restaurantId);
     if(!response.error) {
-      const newTaco = { type, restaurant: restaurantId };
-      this.updateLocalTacos(newTaco);
+      this.updateLocalTacos(response);
     }
     return response;
   }
